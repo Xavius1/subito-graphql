@@ -1,12 +1,14 @@
 {
   "name": "subito-graphql",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Library for Subito micro services using GraphQL interface",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack --config=webpack.config.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "build-doc": "api-extractor run --local --verbose",
+    "build-dist": "./node_modules/.bin/tsc -p tsconfig.dist.json",
+    "build-doc": "./node_modules/.bin/build-doc",
+    "build-types": "./node_modules/.bin/build-types",
+    "compile-js": "./node_modules/.bin/compile-js",
+    "run-tests": "./node_modules/.bin/run-tests",
     "build": "./node_modules/.bin/tsc -p tsconfig.build.json",
     "build-dev": "npm run build && NODE_ENV=development node --inspect lib/index.js",
     "dev": "nodemon --ext ts --exec \"npm run build-dev\"",
@@ -41,11 +43,10 @@
     "jest": "^27.4.7",
     "lint-staged": "^12.3.2",
     "nodemon": "^2.0.15",
+    "subito-ci": "^0.1.5",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.5",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2"
+    "typescript": "^4.5.5"
   },
   "dependencies": {
     "apollo-server": "^3.6.2",
@@ -53,6 +54,6 @@
     "get-value": "^3.0.1",
     "graphql-scalars": "^1.14.1",
     "moment": "^2.29.1",
-    "subito-lib": "^0.1.0"
+    "subito-lib": "^0.1.16"
   }
 }
