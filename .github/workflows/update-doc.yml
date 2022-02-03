@@ -23,5 +23,5 @@ jobs:
         destination_branch: 'master'
         destination_folder: 'src'
         user_email: 'xavius@tutanota.com'
-        user_name: 'Xavius'
+        user_name: 'Xavius1'
         commit_message: 'Update subito-graphql doc'
