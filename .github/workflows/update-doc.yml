@@ -1,0 +1,27 @@
+name: Update subito-doc
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes json file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'etc/subito-graphql.api.json'
+        destination_repo: 'Xavius1/subito-doc'
+        destination_branch: 'master'
+        destination_folder: 'src'
+        user_email: 'graphql@subito.doc'
+        user_name: 'subito-graphql'
+        commit_message: 'Update subito-graphql doc'
