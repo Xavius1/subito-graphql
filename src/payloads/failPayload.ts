@@ -1,5 +1,8 @@
 import type { TPayloadInput, TPayload } from './payload';
 
+/**
+ * @public
+ */
 const failPayload = function failPayloadResponse({
   message,
   data,

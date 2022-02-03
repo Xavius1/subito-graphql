@@ -5,6 +5,9 @@ import type {
 
 type config = { [key: string]: any}
 
+/**
+ * @alpha
+ */
 class Rights {
   private abac: IABAC;
 

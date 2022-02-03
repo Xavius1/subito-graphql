@@ -4,6 +4,77 @@
 
 ```ts
 
+import type { ILogger } from 'subito-lib';
+
+// Warning: (ae-forgotten-export) The symbol "IABAC" needs to be exported by the entry point index.d.ts
+//
+// @alpha (undocumented)
+export class ABAC implements IABAC {
+    // Warning: (ae-forgotten-export) The symbol "Apps" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    addApps(apps: Apps): void;
+    // (undocumented)
+    addDefaultPolicies(policies: Function): this;
+    // Warning: (ae-forgotten-export) The symbol "Group" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    addGroups(groups: Group[]): void;
+    // Warning: (ae-forgotten-export) The symbol "Policy" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    addPolicy(resource: string, policy: Policy): void;
+    // (undocumented)
+    admin(config?: {}): Rights;
+    // (undocumented)
+    anyone(config?: {}): Rights;
+    // Warning: (ae-forgotten-export) The symbol "Resource" needs to be exported by the entry point index.d.ts
+    // Warning: (ae-forgotten-export) The symbol "CodeError" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    bypass(resource: Resource, err: CodeError): boolean;
+    // Warning: (ae-forgotten-export) The symbol "GroupName" needs to be exported by the entry point index.d.ts
+    // Warning: (ae-forgotten-export) The symbol "Rights" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    group(group: GroupName, config?: {}): Rights;
+    // (undocumented)
+    guest(config?: {}): Rights;
+    // Warning: (ae-forgotten-export) The symbol "Context" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    init(context: Context): this;
+    // Warning: (ae-forgotten-export) The symbol "AppName" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    isApp(app: AppName): boolean;
+    // (undocumented)
+    isInGroup(group: Group): boolean;
+    // (undocumented)
+    load(root: string, paths: string | string[]): Promise<this>;
+    // (undocumented)
+    loadFromPath(root: string, path: string): Promise<boolean>;
+    // (undocumented)
+    member(config?: {}): Rights;
+    // (undocumented)
+    setLogger(logger: ILogger): this;
+    // (undocumented)
+    throw(resource: ResourceName, err: CodeError): boolean;
+    // (undocumented)
+    verify(resource: ResourceName, params: Params): true | undefined;
+    // Warning: (ae-forgotten-export) The symbol "ResourceName" needs to be exported by the entry point index.d.ts
+    // Warning: (ae-forgotten-export) The symbol "Params" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    verifyGroupAccess(policy: Policy, group: GroupName, resource: ResourceName, { source, context: { viewer } }: Params): {
+        access: boolean;
+        err?: undefined;
+    } | {
+        access: boolean;
+        err: string;
+    };
+}
+
 // @public
 export class GID {
     static batchDecode(ids: Array<string>, options?: DecodeOptions): (string | number | {
