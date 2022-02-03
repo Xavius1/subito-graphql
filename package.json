@@ -1,15 +1,10 @@
 {
   "name": "subito-graphql",
   "version": "0.1.0",
-  "description": "Library for Subito micro services using GraphQL interface",
+  "description": "Library for subito micro services using GraphQL interface",
   "main": "index.js",
   "scripts": {
-    "build-dist": "./node_modules/.bin/tsc -p tsconfig.dist.json",
-    "build-doc": "./node_modules/.bin/build-doc",
-    "build-types": "./node_modules/.bin/build-types",
-    "compile-js": "./node_modules/.bin/compile-js",
-    "run-tests": "./node_modules/.bin/run-tests",
-    "build": "./node_modules/.bin/tsc -p tsconfig.build.json",
+    "build": "npx tsc -p tsconfig.build.json",
     "build-dev": "npm run build && NODE_ENV=development node --inspect lib/index.js",
     "dev": "nodemon --ext ts --exec \"npm run build-dev\"",
     "start": "npm run build && NODE_ENV=production node lib/index.js"

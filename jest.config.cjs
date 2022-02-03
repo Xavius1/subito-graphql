@@ -7,4 +7,10 @@ module.exports = {
   ],
   bail: true,
   collectCoverage: true,
+  collectCoverageFrom: ['./src/**'],
+  coverageThreshold: {
+    global: {
+      lines: 100,
+    },
+  },
 };
