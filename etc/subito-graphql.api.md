@@ -75,6 +75,12 @@ export class ABAC implements IABAC {
     };
 }
 
+// Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
+//
+// @public (undocumented)
+export const failPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
+
 // @public
 export class GID {
     static batchDecode(ids: Array<string>, options?: DecodeOptions): (string | number | {

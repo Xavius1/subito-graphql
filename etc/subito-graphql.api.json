@@ -170,6 +170,41 @@
       "name": "",
       "members": [
         {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!failPayload:var",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "failPayload: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ message, data, success, code, keyData, }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayloadInput",
+              "canonicalReference": "subito-graphql!TPayloadInput:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "failPayload",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
           "kind": "Class",
           "canonicalReference": "subito-graphql!GID:class",
           "docComment": "/**\n * Class use to transform local ID to base 64 globally unique ID Specs by relayjs\n *\n * @public\n */\n",
