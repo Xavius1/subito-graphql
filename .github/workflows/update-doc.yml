@@ -22,6 +22,6 @@ jobs:
         destination_repo: 'Xavius1/subito-doc'
         destination_branch: 'master'
         destination_folder: 'src'
-        user_email: 'graphql@subito.doc'
-        user_name: 'subito-graphql'
+        user_email: 'xavius@tutanota.com'
+        user_name: 'Xavius'
         commit_message: 'Update subito-graphql doc'
