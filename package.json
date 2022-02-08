@@ -35,7 +35,7 @@
     "eslint-plugin-no-secrets": "0.8.9",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-tsdoc": "0.2.14",
-    "jest": "27.5.0",
+    "jest": "27.5.1",
     "lint-staged": "12.3.3",
     "nodemon": "2.0.15",
     "subito-ci": "0.1.10",
