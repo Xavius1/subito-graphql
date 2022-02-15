@@ -2,18 +2,18 @@
   "extends": [
     "config:base"
   ],
-  "reviewers": [
-    "Xavius1"
-  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
         "minor",
-        "patch",
-        "pin",
-        "digest"
+        "patch"
       ],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     }
+  ],
+  "automergeType": "branch",
+  "reviewers": [
+    "Xavius1"
   ]
 }
