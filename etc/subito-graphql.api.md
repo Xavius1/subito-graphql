@@ -99,6 +99,4 @@ export class GID {
     static encode(type: string, id: string | number, data?: Object): string;
 }
 
-// (No @packageDocumentation comment for this package)
-
 ```

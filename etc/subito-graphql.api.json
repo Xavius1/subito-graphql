@@ -162,7 +162,7 @@
   },
   "kind": "Package",
   "canonicalReference": "subito-graphql!",
-  "docComment": "",
+  "docComment": "/**\n * Library for subito micro services using GraphQL interface\n *\n * @packageDocumentation\n */\n",
   "name": "subito-graphql",
   "preserveMemberOrder": false,
   "members": [
