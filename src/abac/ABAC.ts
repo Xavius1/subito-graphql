@@ -116,8 +116,8 @@ class ABAC implements IABAC {
     const files = fs.readdirSync(`${root}/${path}`);
     await Toolbox.asyncForEach(files, async (file: string) => {
       if (file !== 'plugin') {
-        let namespace = file.replace(/^(.*)ABAC\/, '$1');
-        namespace = namespace.charAt(0).toUpperCase() + namespace.substring(1);
+        const tmpNs: string = file.replace(/^(.*)ABAC\//, '$1');
+        const namespace = tmpNs.charAt(0).toUpperCase() + tmpNs.substring(1);
         const { default: fn } = await import(`${root}/${path}${file}`);
         fn(this, namespace);
       }
