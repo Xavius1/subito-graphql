@@ -2,9 +2,9 @@ name: Update subito-doc
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   copy-file:
@@ -20,7 +20,7 @@ jobs:
       with:
         source_file: 'etc/subito-graphql.api.json'
         destination_repo: 'Xavius1/subito-doc'
-        destination_branch: 'master'
+        destination_branch: 'main'
         destination_folder: 'src'
         user_email: 'xavius@tutanota.com'
         user_name: 'Xavius1'
