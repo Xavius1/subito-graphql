@@ -15,6 +15,7 @@ tsconfig.build.json
 tsconfig.dist.json
 tsconfig.json
 tsdoc-metadata.json
+renovate.json
 
 # Node artifact files
 node_modules/
