@@ -1,6 +1,6 @@
 import { ForbiddenError } from 'apollo-server';
 import { Token } from 'subito-lib';
-import e from '../security/env.js';
+import e from '../security/env';
 
 const REGEX_INTROSPECTION_QUERY = /\b(__schema|__type)\b/;
 

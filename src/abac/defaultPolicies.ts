@@ -1,4 +1,4 @@
-import type { IABAC, Namespace, Resource } from './ABAC.js';
+import type { IABAC, Namespace, Resource } from './ABAC';
 
 const anyone = function anyonePolicies(abac: IABAC, namespace: Namespace, resources: Resource) {
   return abac

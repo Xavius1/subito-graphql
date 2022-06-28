@@ -1,5 +1,5 @@
 import get from 'get-value';
-import type { IPaginator, PaginatorOrder } from './ArrayPaginator.js';
+import type { IPaginator, PaginatorOrder } from './ArrayPaginator';
 
 export interface IDocument {
   [key: string]: any

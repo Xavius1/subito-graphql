@@ -1,7 +1,7 @@
-import SecurityError from '../errors/SecurityError.js';
+import SecurityError from '../errors/SecurityError';
 import type {
   IABAC, Gateway, Namespace, Resource, GroupName,
-} from './ABAC.js';
+} from './ABAC';
 
 type config = { [key: string]: any}
 

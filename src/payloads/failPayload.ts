@@ -1,4 +1,4 @@
-import type { TPayloadInput, TPayload } from './mutationPayload.js';
+import type { TPayloadInput, TPayload } from './mutationPayload';
 
 /**
  * @public

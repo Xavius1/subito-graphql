@@ -49,6 +49,6 @@
     "get-value": "^3.0.1",
     "graphql-scalars": "^1.14.1",
     "moment": "^2.29.1",
-    "subito-lib": "^0.2.2"
+    "subito-lib": "0.3.0"
   }
 }

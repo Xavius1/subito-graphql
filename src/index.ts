@@ -1,3 +1,3 @@
-export { default as GID } from './helpers/GID.js';
-export { default as ABAC } from './abac/ABAC.js';
-export { default as failPayload } from './payloads/failPayload.js';
+export { default as GID } from './helpers/GID';
+export { default as ABAC } from './abac/ABAC';
+export { default as failPayload } from './payloads/failPayload';

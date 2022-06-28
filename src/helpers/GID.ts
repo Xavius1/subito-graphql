@@ -3,7 +3,7 @@ import {
   Checker,
 } from 'subito-lib';
 import type { EncryptData } from 'subito-lib';
-import e from '../security/env.js';
+import e from '../security/env';
 
 const checker = new Checker(true);
 

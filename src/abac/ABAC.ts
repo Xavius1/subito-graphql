@@ -3,10 +3,10 @@ import {
   Toolbox,
 } from 'subito-lib';
 import type { ILogger } from 'subito-lib';
-import SecurityError from '../errors/SecurityError.js';
-import Rights from './Rights.js';
-import defaultPolicies from './defaultPolicies.js';
-import e from '../security/env.js';
+import SecurityError from '../errors/SecurityError';
+import Rights from './Rights';
+import defaultPolicies from './defaultPolicies';
+import e from '../security/env';
 
 type Group = { name: string, roles: string[] }
 type Apps = { [appName: string]: string[] }
@@ -115,8 +115,8 @@ class ABAC implements IABAC {
   async loadFromPath(root: string, path: string) {
     const files = fs.readdirSync(`${root}/${path}`);
     await Toolbox.asyncForEach(files, async (file: string) => {
-      if (file !== 'plugin.js') {
-        let namespace = file.replace(/^(.*)ABAC\.js/, '$1');
+      if (file !== 'plugin') {
+        let namespace = file.replace(/^(.*)ABAC\/, '$1');
         namespace = namespace.charAt(0).toUpperCase() + namespace.substring(1);
         const { default: fn } = await import(`${root}/${path}${file}`);
         fn(this, namespace);
