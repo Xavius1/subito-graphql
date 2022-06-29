@@ -199,6 +199,368 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "subito-graphql!DefaultCursorResolver:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultCursorResolver: "
+            },
+            {
+              "kind": "Content",
+              "text": "(type: string) => {\n    cursor({ cursor }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CursorProps",
+              "canonicalReference": "subito-graphql!CursorProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): string;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultCursorResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!DefaultEntityResolver:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultEntityResolver: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    id(obj: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | null, _args: any, _context: any, { parentType }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "InfoProps",
+              "canonicalReference": "subito-graphql!~InfoProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): string | null;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultEntityResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!DefaultMutationResolver:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultMutationResolver: "
+            },
+            {
+              "kind": "Content",
+              "text": "(source: string) => {\n    create({ input }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateProps",
+              "canonicalReference": "subito-graphql!CreateProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<import(\"../payloads/mutationPayload\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    update({ "
+            },
+            {
+              "kind": "Reference",
+              "text": "input",
+              "canonicalReference": "subito-graphql!~__type#input"
+            },
+            {
+              "kind": "Content",
+              "text": ": { id, values } }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "UpdateProps",
+              "canonicalReference": "subito-graphql!UpdateProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<import(\"../payloads/mutationPayload\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    delete({ "
+            },
+            {
+              "kind": "Reference",
+              "text": "input",
+              "canonicalReference": "subito-graphql!~__type#input"
+            },
+            {
+              "kind": "Content",
+              "text": ": { id } }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeleteProps",
+              "canonicalReference": "subito-graphql!DeleteProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<import(\"../payloads/mutationPayload\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultMutationResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 30
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!DefaultPageInfoResolver:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultPageInfoResolver: "
+            },
+            {
+              "kind": "Content",
+              "text": "(type: string) => {\n    startCursor({ startCursor }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CursorProps",
+              "canonicalReference": "subito-graphql!~CursorProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): string | null;\n    endCursor({ endCursor }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CursorProps",
+              "canonicalReference": "subito-graphql!~CursorProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): string | null;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultPageInfoResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!DefaultQueryResolver:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultQueryResolver: "
+            },
+            {
+              "kind": "Content",
+              "text": "(source: string) => {\n    getOne({ id, type }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "GetOneProps",
+              "canonicalReference": "subito-graphql!GetOneProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>;\n    getMany(args: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>;\n    getAll(args: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyObject",
+              "canonicalReference": "subito-graphql!AnyObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultQueryResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 20
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "subito-graphql!failPayload:var",
           "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
@@ -461,6 +823,78 @@
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!mutationPayload:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "mutationPayload: "
+            },
+            {
+              "kind": "Content",
+              "text": "(doc?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DocumentNode",
+              "canonicalReference": "graphql!DocumentNode:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "mutationPayload",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!successPayload:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "successPayload: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ message, data, success, code, keyData, }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayloadInput",
+              "canonicalReference": "subito-graphql!TPayloadInput:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "TPayload",
+              "canonicalReference": "subito-graphql!TPayload:type"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "successPayload",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
         }
       ]
     }

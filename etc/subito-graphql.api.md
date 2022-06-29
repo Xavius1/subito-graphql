@@ -4,76 +4,8 @@
 
 ```ts
 
-import type { ILogger } from 'subito-lib';
-
-// Warning: (ae-forgotten-export) The symbol "IABAC" needs to be exported by the entry point index.d.ts
-//
-// @alpha (undocumented)
-export class ABAC implements IABAC {
-    // Warning: (ae-forgotten-export) The symbol "Apps" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    addApps(apps: Apps): void;
-    // (undocumented)
-    addDefaultPolicies(policies: Function): this;
-    // Warning: (ae-forgotten-export) The symbol "Group" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    addGroups(groups: Group[]): void;
-    // Warning: (ae-forgotten-export) The symbol "Policy" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    addPolicy(resource: string, policy: Policy): void;
-    // (undocumented)
-    admin(config?: {}): Rights;
-    // (undocumented)
-    anyone(config?: {}): Rights;
-    // Warning: (ae-forgotten-export) The symbol "Resource" needs to be exported by the entry point index.d.ts
-    // Warning: (ae-forgotten-export) The symbol "CodeError" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    bypass(resource: Resource, err: CodeError): boolean;
-    // Warning: (ae-forgotten-export) The symbol "GroupName" needs to be exported by the entry point index.d.ts
-    // Warning: (ae-forgotten-export) The symbol "Rights" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    group(group: GroupName, config?: {}): Rights;
-    // (undocumented)
-    guest(config?: {}): Rights;
-    // Warning: (ae-forgotten-export) The symbol "Context" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    init(context: Context): this;
-    // Warning: (ae-forgotten-export) The symbol "AppName" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    isApp(app: AppName): boolean;
-    // (undocumented)
-    isInGroup(group: Group): boolean;
-    // (undocumented)
-    load(root: string, paths: string | string[]): Promise<this>;
-    // (undocumented)
-    loadFromPath(root: string, path: string): Promise<boolean>;
-    // (undocumented)
-    member(config?: {}): Rights;
-    // (undocumented)
-    setLogger(logger: ILogger): this;
-    // (undocumented)
-    throw(resource: ResourceName, err: CodeError): boolean;
-    // (undocumented)
-    verify(resource: ResourceName, params: Params): true | undefined;
-    // Warning: (ae-forgotten-export) The symbol "ResourceName" needs to be exported by the entry point index.d.ts
-    // Warning: (ae-forgotten-export) The symbol "Params" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    verifyGroupAccess(policy: Policy, group: GroupName, resource: ResourceName, { source, context: { viewer } }: Params): {
-        access: boolean;
-        err?: undefined;
-    } | {
-        access: boolean;
-        err: string;
-    };
-}
+import { resolvers as DefaultScalarsResolver } from 'graphql-scalars';
+import type { DocumentNode } from 'graphql';
 
 // @public (undocumented)
 export type AnyObject = {
@@ -81,8 +13,39 @@ export type AnyObject = {
     __proto__: never;
 };
 
+// @public (undocumented)
+export const DefaultCursorResolver: (type: string) => {
+    cursor({ cursor }: CursorProps): string;
+};
+
+// @public (undocumented)
+export const DefaultEntityResolver: {
+    id(obj: AnyObject | null, _args: any, _context: any, { parentType }: InfoProps): string | null;
+};
+
+// @public (undocumented)
+export const DefaultMutationResolver: (source: string) => {
+    create({ input }: CreateProps, context: AnyObject): Promise<TPayload>;
+    update({ input: { id, values } }: UpdateProps, context: AnyObject): Promise<TPayload>;
+    delete({ input: { id } }: DeleteProps, context: AnyObject): Promise<TPayload>;
+};
+
+// @public (undocumented)
+export const DefaultPageInfoResolver: (type: string) => {
+    startCursor({ startCursor }: CursorProps_2): string | null;
+    endCursor({ endCursor }: CursorProps_2): string | null;
+};
+
+// @public (undocumented)
+export const DefaultQueryResolver: (source: string) => {
+    getOne({ id, type }: GetOneProps, context: AnyObject): Promise<any>;
+    getMany(args: AnyObject, context: AnyObject): Promise<any>;
+    getAll(args: AnyObject, context: AnyObject): Promise<any>;
+};
+
+export { DefaultScalarsResolver }
+
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
 //
 // @public (undocumented)
 export const failPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
@@ -103,5 +66,22 @@ export class GID {
     };
     static encode(type: string, id: string | number, data?: Object | string | number): string;
 }
+
+// @public (undocumented)
+export const mutationPayload: (doc?: DocumentNode) => TPayload;
+
+// @public (undocumented)
+export const successPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
+
+// Warnings were encountered during analysis:
+//
+// src/resolvers/DefaultCursorResolver.ts:8:44 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultEntityResolver.ts:8:28 - (ae-forgotten-export) The symbol "InfoProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:26:48 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:26:48 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:28:9 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:36:9 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultPageInfoResolver.ts:9:46 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultQueryResolver.ts:30:45 - (ae-forgotten-export) The symbol "GetOneProps" needs to be exported by the entry point index.d.ts
 
 ```
