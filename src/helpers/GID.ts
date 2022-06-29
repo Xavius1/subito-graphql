@@ -7,11 +7,6 @@ import e from '../security/env';
 
 const checker = new Checker(true);
 
-type DecodeOptions = {
-  forceInt?: boolean
-  raw?: boolean
-}
-
 /**
  * Class use to transform local ID to base 64 globally unique ID
  * Specs by relayjs
@@ -19,7 +14,7 @@ type DecodeOptions = {
  */
 class GID {
   /**
-   * Encode an id
+   * Generate a globally unique id
    *
    * @example
    * We want to build a GID to identify the third product save in cart
@@ -29,12 +24,12 @@ class GID {
    * console.log(GID.encode('Cart', 'aEDl54dscc45', { product: 2 }));
    * ```
    *
-   * @param type - Name of the entity
+   * @param type - Type of the entity (User, Article, ...)
    * @param id - ID from the local source (table, collection, ...)
-   * @param data - Object containing specific data to identify the doc source (like an array index)
-   * @returns
+   * @param data - Any specific data to identify the doc source (like an array index)
+   * @returns A globally unique id
    */
-  static encode(type: string, id: string | number, data?: Object) {
+  static encode(type: string, id: string | number, data?: Object | string | number): string {
     checker.isExists(type);
     checker.isExists(id);
     let str = `${type}/${id}/2.2`;
@@ -63,17 +58,14 @@ class GID {
    * @param options - Options to use, use forceInt = true if your local id must be an int
    * @returns
    */
-  static decode(gid: string, options: DecodeOptions = { forceInt: false }) {
+  static decode(gid: string, raw?: Boolean) {
     checker.isExists(gid);
     const [type, id, version, data] = Buffer
       .from(gid, 'base64')
       .toString('binary')
       .split('/');
 
-    let parsedId: string | number = id;
-    if (options.forceInt) {
-      parsedId = parseInt(id, 10);
-    }
+    const parsedId: string | number = JSON.parse(id);
     const parsedVersion = parseFloat(version);
 
     let parsedData = {};
@@ -83,14 +75,15 @@ class GID {
       parsedData = JSON.parse(crypto.decrypt(tmpData.data));
     }
 
-    if (options.raw) {
+    if (raw) {
       return parsedId;
     }
+
     return {
-      parsedId,
+      id: parsedId,
+      version: parsedVersion,
+      data: parsedData,
       type,
-      parsedVersion,
-      parsedData,
     };
   }
 
@@ -101,9 +94,9 @@ class GID {
    * @param options - Same as {@link GID.decode}
    * @returns
    */
-  static batchDecode(ids: Array<string>, options?: DecodeOptions) {
+  static batchDecode(ids: string[], raw?: Boolean) {
     checker.isArray(ids);
-    return ids.map((id) => GID.decode(id, options));
+    return ids.map((id) => GID.decode(id, raw));
   }
 }
 

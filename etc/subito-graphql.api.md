@@ -75,6 +75,12 @@ export class ABAC implements IABAC {
     };
 }
 
+// @public (undocumented)
+export type AnyObject = {
+    [key: string]: any;
+    __proto__: never;
+};
+
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
 //
@@ -83,20 +89,19 @@ export const failPayload: ({ message, data, success, code, keyData, }: TPayloadI
 
 // @public
 export class GID {
-    static batchDecode(ids: Array<string>, options?: DecodeOptions): (string | number | {
-        parsedId: string | number;
+    static batchDecode(ids: string[], raw?: Boolean): (string | number | {
+        id: string | number;
+        version: number;
+        data: {};
         type: string;
-        parsedVersion: number;
-        parsedData: {};
     })[];
-    // Warning: (ae-forgotten-export) The symbol "DecodeOptions" needs to be exported by the entry point index.d.ts
-    static decode(gid: string, options?: DecodeOptions): string | number | {
-        parsedId: string | number;
+    static decode(gid: string, raw?: Boolean): string | number | {
+        id: string | number;
+        version: number;
+        data: {};
         type: string;
-        parsedVersion: number;
-        parsedData: {};
     };
-    static encode(type: string, id: string | number, data?: Object): string;
+    static encode(type: string, id: string | number, data?: Object | string | number): string;
 }
 
 ```
