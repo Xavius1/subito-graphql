@@ -21,6 +21,7 @@ abstract class Abac {
   protected context = null;
 
   initialize({
+    // @ts-ignore TODO need to be handle
     context,
   } = {}) {
     this.context = context;
