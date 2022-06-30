@@ -18,7 +18,7 @@
  * @public
  */
 abstract class Abac {
-  private context = null;
+  protected context = null;
 
   initialize({
     context,
