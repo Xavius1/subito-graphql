@@ -82,6 +82,30 @@ export class GID {
 // @public (undocumented)
 export const mutationPayload: (doc?: DocumentNode) => TPayload;
 
+// @public
+export abstract class Policy {
+    constructor({ viewer, gateway }: {
+        viewer: any;
+        gateway: any;
+    });
+    // (undocumented)
+    create(): boolean;
+    // (undocumented)
+    delete(): boolean;
+    // (undocumented)
+    protected gateway: null;
+    // (undocumented)
+    protected hasRole(role: string): any;
+    // (undocumented)
+    protected isAdmin(): any;
+    // (undocumented)
+    read({ doc }: AnyObject): any;
+    // (undocumented)
+    update(): boolean;
+    // (undocumented)
+    protected viewer: AnyObject | null;
+}
+
 // @public (undocumented)
 export const successPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
 
