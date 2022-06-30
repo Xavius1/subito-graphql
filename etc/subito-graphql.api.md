@@ -16,7 +16,7 @@ export abstract class Abac {
         context: any;
     }): void;
     // (undocumented)
-    protected policies: never[];
+    protected policies: {};
 }
 
 // @public (undocumented)

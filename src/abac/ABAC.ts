@@ -28,7 +28,7 @@
 abstract class Abac {
   protected context = null;
 
-  protected policies = [];
+  protected policies = {};
 
   public initialize({
     // @ts-ignore TODO need to be handle
