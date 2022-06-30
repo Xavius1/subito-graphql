@@ -1,3 +1,7 @@
+import { Thrower } from 'subito-lib';
+import { AnyObject } from '..';
+import e from '../security/env';
+
 /**
  * Abstract class to implements Abac policy control
  *
@@ -21,33 +25,55 @@
  * @public
  */
 abstract class Policy {
-  protected viewer = null;
+  protected viewer: AnyObject | null = null;
 
   protected gateway = null;
 
+  // @ts-ignore TODO handle it
   constructor({ viewer, gateway }) {
     this.viewer = viewer;
     this.gateway = gateway;
   }
 
-  protected hasRole(role) {
+  protected hasRole(role: string) {
+    // @ts-ignore TODO handle it
     const { roles = [] } = this.viewer;
     return roles.include(role);
   }
 
-  public read({ doc }) {
-    return doc;
+  protected isAdmin() {
+    return this.hasRole(e.ROLE_ADMIN);
+  }
+
+  public read({ doc }: AnyObject) {
+    if (this.isAdmin()) {
+      return doc;
+    }
+
+    return null;
   }
 
   public create() {
+    if (!this.isAdmin()) {
+      Thrower.forbidden();
+    }
+
     return true;
   }
 
   public delete() {
+    if (!this.isAdmin()) {
+      Thrower.forbidden();
+    }
+
     return true;
   }
 
   public update() {
+    if (!this.isAdmin()) {
+      Thrower.forbidden();
+    }
+
     return true;
   }
 }

@@ -16,4 +16,9 @@ describe('env.js', () => {
     expect(e._defaultValues.HEADER_APP_TOKEN_NAME) // eslint-disable-line no-underscore-dangle
       .toBe('x-app-token');
   });
+  // ROLE_ADMIN
+  test('ROLE_ADMIN default value should be', () => {
+    expect(e._defaultValues.ROLE_ADMIN) // eslint-disable-line no-underscore-dangle
+      .toBe('ADMIN');
+  });
 });
