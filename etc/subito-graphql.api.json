@@ -173,6 +173,99 @@
       "preserveMemberOrder": false,
       "members": [
         {
+          "kind": "Class",
+          "canonicalReference": "subito-graphql!Abac:class",
+          "docComment": "/**\n * Abstract class to implements Abac control Initialize as data sources to have context\n *\n * @example\n * ```\n * class MyAbac extends Abac {\n *   public Entity: EntityAbac\n * }\n * ```\n *\n * Then into index.ts\n * ```\n * dataSources: () => ({\n *   abac: new MyAbac()\n * })\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare abstract class Abac "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Abac",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "subito-graphql!Abac#context:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected context: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "null"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": true
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Abac#initialize:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "initialize({ context, }?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        context: any;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ context, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "initialize"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
           "kind": "TypeAlias",
           "canonicalReference": "subito-graphql!AnyObject:type",
           "docComment": "",

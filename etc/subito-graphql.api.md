@@ -7,6 +7,16 @@
 import { resolvers as DefaultScalarsResolver } from 'graphql-scalars';
 import type { DocumentNode } from 'graphql';
 
+// @public
+export abstract class Abac {
+    // (undocumented)
+    protected context: null;
+    // (undocumented)
+    initialize({ context, }?: {
+        context: any;
+    }): void;
+}
+
 // @public (undocumented)
 export type AnyObject = {
     [key: string]: any;
