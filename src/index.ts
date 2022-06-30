@@ -6,6 +6,7 @@
 
 // Abac
 export { default as Abac } from './abac/Abac';
+export { default as Policy } from './abac/Policy';
 
 // Helpers
 export { default as GID } from './helpers/GID';
