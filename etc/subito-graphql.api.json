@@ -175,7 +175,7 @@
         {
           "kind": "Class",
           "canonicalReference": "subito-graphql!Abac:class",
-          "docComment": "/**\n * Abstract class to implements Abac control Initialize as data sources to have context\n *\n * @example\n * ```\n * class MyAbac extends Abac {\n *   public Entity: EntityAbac\n * }\n * ```\n *\n * Then into index.ts\n * ```\n * dataSources: () => ({\n *   abac: new MyAbac()\n * })\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Abstract class to implements Abac control Initialize as data sources to have context\n *\n * @example\n * ```\n * class MyAbac extends Abac {\n *   protected policies = [ EntityPolicy ];\n * }\n * ```\n *\n * Then into index.ts\n * ```\n * dataSources: () => ({\n *   abac: new MyAbac()\n * })\n * ```\n *\n * To use it:\n * ```\n * const { dataSources: { Abac } } = context;\n * Abac.EntityPolicy.create(input);\n * Abac.EntityPolicy.delete(input);\n * Abac.EntityPolicy.read(doc);\n * Abac.EntityPolicy.update(input);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -261,6 +261,35 @@
               ],
               "isOptional": false,
               "name": "initialize"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "subito-graphql!Abac#policies:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected policies: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "never[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "policies",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": true
             }
           ],
           "implementsTokenRanges": []

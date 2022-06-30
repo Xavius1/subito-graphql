@@ -15,6 +15,8 @@ export abstract class Abac {
     initialize({ context, }?: {
         context: any;
     }): void;
+    // (undocumented)
+    protected policies: never[];
 }
 
 // @public (undocumented)
