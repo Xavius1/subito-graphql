@@ -4,6 +4,9 @@
  * @packageDocumentation
  */
 
+// Abac
+export { default as Abac } from './abac/Abac';
+
 // Helpers
 export { default as GID } from './helpers/GID';
 
