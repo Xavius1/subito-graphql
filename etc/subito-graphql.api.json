@@ -305,7 +305,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    [key: string]: any;\n    __proto__: never;\n}"
+              "text": "{\n    [key: string]: any;\n}"
             },
             {
               "kind": "Content",
@@ -437,16 +437,7 @@
             },
             {
               "kind": "Content",
-              "text": ">;\n    update({ "
-            },
-            {
-              "kind": "Reference",
-              "text": "input",
-              "canonicalReference": "subito-graphql!~__type#input"
-            },
-            {
-              "kind": "Content",
-              "text": ": { id, values } }: "
+              "text": ">;\n    update({ input }: "
             },
             {
               "kind": "Reference",
@@ -482,16 +473,7 @@
             },
             {
               "kind": "Content",
-              "text": ">;\n    delete({ "
-            },
-            {
-              "kind": "Reference",
-              "text": "input",
-              "canonicalReference": "subito-graphql!~__type#input"
-            },
-            {
-              "kind": "Content",
-              "text": ": { id } }: "
+              "text": ">;\n    delete({ input }: "
             },
             {
               "kind": "Reference",
@@ -535,7 +517,7 @@
           "name": "DefaultMutationResolver",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 30
+            "endIndex": 26
           }
         },
         {
@@ -581,7 +563,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultQueryResolver:var",
-          "docComment": "",
+          "docComment": "/**\n * Define default query resolvers\n *\n * Can be use as is or extended in a custom resolver\n *\n * @param source - The type of the entity to resolve\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -680,6 +662,198 @@
             "startIndex": 1,
             "endIndex": 20
           }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "subito-graphql!Entity:class",
+          "docComment": "/**\n * Class to generate a entity before returning data\n *\n * You can re-map some fields, like _id to id And keep the only fields authorized by the ABAC policy\n *\n * @example\n * ```\n * // Define which fields to remap\n * const map = {_id: 'id'};\n * // Create your entity\n * const user = new Entity(doc, map);\n * // Filter data\n * entity.keep(['id', 'firstname']);\n * // Or you can also filter data with the remove method\n * entity.remove(['email','mobile']);\n * // Then get the values\n * entity.get();\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare class Entity "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Entity",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "subito-graphql!Entity:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `Entity` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(doc: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", map?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Map",
+                  "canonicalReference": "subito-graphql!Map:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "doc",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "map",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Entity#get:member(1)",
+              "docComment": "/**\n * Get the mapped & filtered data\n *\n * @returns \n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "get"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Entity#keep:member(1)",
+              "docComment": "/**\n * Define which fields to keep in the entity\n *\n * @param fields - An array of string matching the fields to keep\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keep(fields: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "fields",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "keep"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Entity#remove:member(1)",
+              "docComment": "/**\n * Define which fields to remove in the entity\n *\n * @param fields - An array of string matching the fields to remove\n *\n * @returns \n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "remove(fields: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "fields",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "remove"
+            }
+          ],
+          "implementsTokenRanges": []
         },
         {
           "kind": "Variable",
