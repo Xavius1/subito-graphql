@@ -26,31 +26,47 @@ export type DeleteProps = {
 const DefaultMutationResolver = (source: string) => ({
   async create({ input }: CreateProps, context: AnyObject) {
     const { dataSources } = context;
+    const { Abac } = dataSources;
+
+    Abac[source].create({ input });
 
     return mutationPayload(
-      await dataSources[source].createDoc(input, context),
+      Abac[source].read({
+        doc: await dataSources[`${source}s`].createDoc(input, context),
+      }),
     );
   },
 
-  async update({ input: { id, values } }: UpdateProps, context: AnyObject) {
+  async update({ input }: UpdateProps, context: AnyObject) {
+    const { id, values } = input;
     const { dataSources } = context;
+    const { Abac } = dataSources;
+
+    Abac[source].update({ input });
 
     return mutationPayload(
-      await dataSources[source].updateDoc({
-        id: GID.decode(id, true),
-        values,
-      }, context),
+      Abac[source].read({
+        doc: await dataSources[`${source}s`].updateDoc({
+          id: GID.decode(id, true),
+          values,
+        }, context),
+      }),
     );
   },
 
-  async delete({ input: { id } }: DeleteProps, context: AnyObject) {
+  async delete({ input }: DeleteProps, context: AnyObject) {
+    const { id } = input;
     const { dataSources } = context;
-    const { doc } = await dataSources[source].delete({
+    const { Abac } = dataSources;
+
+    Abac[source].update({ input });
+
+    const { doc } = await dataSources[`${source}s`].delete({
       id: GID.decode(id, true),
     }, context);
 
     return mutationPayload(
-      doc,
+      Abac[source].read({ doc }),
     );
   },
 });

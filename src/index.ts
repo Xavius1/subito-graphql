@@ -7,6 +7,7 @@
 // Abac
 export { default as Abac } from './abac/Abac';
 export { default as Policy } from './abac/Policy';
+export { default as Entity } from './abac/Entity';
 
 // Helpers
 export { default as GID } from './helpers/GID';
@@ -26,5 +27,4 @@ export { graphqlScalarsResolvers as DefaultScalarsResolver } from './resolvers/D
 
 export type AnyObject = {
   [key: string]: any
-  __proto__: never
 }
