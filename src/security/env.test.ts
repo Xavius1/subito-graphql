@@ -9,7 +9,7 @@ describe('env.js', () => {
   // GID_DATA_CRYPTO_KEY
   test('GID_DATA_CRYPTO_KEY type should be', () => {
     expect(e._types.GID_DATA_CRYPTO_KEY) // eslint-disable-line no-underscore-dangle
-      .toBe('secret');
+      .toBe(0);
   });
   // HEADER_APP_TOKEN
   test('HEADER_APP_TOKEN default value should be', () => {
