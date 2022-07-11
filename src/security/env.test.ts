@@ -11,10 +11,15 @@ describe('env.js', () => {
     expect(e._types.GID_DATA_CRYPTO_KEY) // eslint-disable-line no-underscore-dangle
       .toBe('secret');
   });
-  // HEADER_APP_TOKEN_NAME
-  test('HEADER_APP_TOKEN_NAME default value should be', () => {
-    expect(e._defaultValues.HEADER_APP_TOKEN_NAME) // eslint-disable-line no-underscore-dangle
+  // HEADER_APP_TOKEN
+  test('HEADER_APP_TOKEN default value should be', () => {
+    expect(e._defaultValues.HEADER_APP_TOKEN) // eslint-disable-line no-underscore-dangle
       .toBe('x-app-token');
+  });
+  // HEADER_ENDPOINT
+  test('HEADER_ENDPOINT default value should be', () => {
+    expect(e._defaultValues.HEADER_ENDPOINT) // eslint-disable-line no-underscore-dangle
+      .toBe('x-endpoint');
   });
   // ROLE_ADMIN
   test('ROLE_ADMIN default value should be', () => {
