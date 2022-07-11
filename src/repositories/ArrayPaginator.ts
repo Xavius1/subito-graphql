@@ -1,4 +1,4 @@
-import { Calculator, Data } from 'subito-lib';
+import { Calculator, Data, Datte } from 'subito-lib';
 import type { ParseType } from 'subito-lib';
 import moment from 'moment';
 import type { IDocument } from './ArrayRepository';
@@ -37,7 +37,7 @@ class Paginator implements IPaginator {
 
   private field: string = 'createdAt';
 
-  private type: ParseType = 'Date';
+  private type: ParseType | 'Date' = 'Date';
 
   private value: string | null = null;
 
@@ -62,7 +62,7 @@ class Paginator implements IPaginator {
     this.value = first ? after : before;
   }
 
-  setCursor({ field, type }: { field: string, type: ParseType}) {
+  setCursor({ field, type }: { field: string, type: ParseType | 'Date'}) {
     this.field = field;
     this.type = type;
     return this;
@@ -72,8 +72,15 @@ class Paginator implements IPaginator {
     const {
       limit, order, field, value: defaultValue, type,
     } = this;
-    const data = new Data(defaultValue);
-    const value = defaultValue ? data.parseType(type) : null;
+    let data = null;
+    let value = null;
+    if (type === 'Date') {
+      data = new Datte({ date: <string>defaultValue });
+      value = data.toString();
+    } else {
+      data = new Data(defaultValue);
+      value = defaultValue ? data.parseType(type) : null;
+    }
 
     return {
       limit,
