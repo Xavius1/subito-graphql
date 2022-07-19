@@ -428,7 +428,7 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload\")."
+              "text": "<import(\"../payloads/mutationPayload.js\")."
             },
             {
               "kind": "Reference",
@@ -464,7 +464,7 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload\")."
+              "text": "<import(\"../payloads/mutationPayload.js\")."
             },
             {
               "kind": "Reference",
@@ -500,7 +500,7 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload\")."
+              "text": "<import(\"../payloads/mutationPayload.js\")."
             },
             {
               "kind": "Reference",
