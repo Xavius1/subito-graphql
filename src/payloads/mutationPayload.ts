@@ -1,6 +1,6 @@
 import type { DocumentNode } from 'graphql';
-import failPayload from './failPayload';
-import successPayload from './successPayload';
+import failPayload from './failPayload.js';
+import successPayload from './successPayload.js';
 
 export type TPayloadInput = {
   message: string,

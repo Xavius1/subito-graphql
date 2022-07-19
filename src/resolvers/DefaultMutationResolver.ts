@@ -1,6 +1,6 @@
 import { AnyObject } from '..';
-import GID from '../helpers/GID';
-import mutationPayload from '../payloads/mutationPayload';
+import GID from '../helpers/GID.js';
+import mutationPayload from '../payloads/mutationPayload.js';
 
 export type CreateProps = {
   input: AnyObject

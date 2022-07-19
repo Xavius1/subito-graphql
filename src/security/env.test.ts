@@ -1,4 +1,4 @@
-import e from './env';
+import e from './env.js';
 
 describe('env.js', () => {
   // APP_ENV

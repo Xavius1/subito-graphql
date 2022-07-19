@@ -5,25 +5,25 @@
  */
 
 // Abac
-export { default as Abac } from './abac/Abac';
-export { default as Policy } from './abac/Policy';
-export { default as Entity } from './abac/Entity';
+export { default as Abac } from './abac/Abac.js';
+export { default as Policy } from './abac/Policy.js';
+export { default as Entity } from './abac/Entity.js';
 
 // Helpers
-export { default as GID } from './helpers/GID';
+export { default as GID } from './helpers/GID.js';
 
 // Payloads
-export { default as failPayload } from './payloads/failPayload';
-export { default as successPayload } from './payloads/successPayload';
-export { default as mutationPayload } from './payloads/mutationPayload';
+export { default as failPayload } from './payloads/failPayload.js';
+export { default as successPayload } from './payloads/successPayload.js';
+export { default as mutationPayload } from './payloads/mutationPayload.js';
 
 // Resolvers
-export { default as DefaultCursorResolver } from './resolvers/DefaultCursorResolver';
-export { default as DefaultEntityResolver } from './resolvers/DefaultEntityResolver';
-export { default as DefaultMutationResolver } from './resolvers/DefaultMutationResolver';
-export { default as DefaultPageInfoResolver } from './resolvers/DefaultPageInfoResolver';
-export { default as DefaultQueryResolver } from './resolvers/DefaultQueryResolver';
-export { graphqlScalarsResolvers as DefaultScalarsResolver } from './resolvers/DefaultScalarsResolver';
+export { default as DefaultCursorResolver } from './resolvers/DefaultCursorResolver.js';
+export { default as DefaultEntityResolver } from './resolvers/DefaultEntityResolver.js';
+export { default as DefaultMutationResolver } from './resolvers/DefaultMutationResolver.js';
+export { default as DefaultPageInfoResolver } from './resolvers/DefaultPageInfoResolver.js';
+export { default as DefaultQueryResolver } from './resolvers/DefaultQueryResolver.js';
+export { graphqlScalarsResolvers as DefaultScalarsResolver } from './resolvers/DefaultScalarsResolver.js';
 
 export type AnyObject = {
   [key: string]: any

@@ -1,4 +1,4 @@
-import type { TPayloadInput, TPayload } from './mutationPayload';
+import type { TPayloadInput, TPayload } from './mutationPayload.js';
 
 const successPayload = function successPayloadResponse({
   message,

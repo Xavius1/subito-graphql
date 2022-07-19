@@ -1,6 +1,6 @@
 import { Thrower } from 'subito-lib';
 import { AnyObject } from '..';
-import e from '../security/env';
+import e from '../security/env.js';
 
 /**
  * Abstract class to implements Abac policy control

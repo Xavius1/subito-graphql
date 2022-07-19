@@ -1,5 +1,5 @@
 import { AnyObject } from '..';
-import GID from '../helpers/GID';
+import GID from '../helpers/GID.js';
 
 /**
  * @internal

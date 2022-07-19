@@ -1,4 +1,4 @@
-import GID from '../helpers/GID';
+import GID from '../helpers/GID.js';
 import type { AnyObject } from '..';
 
 export type CursorProps = {

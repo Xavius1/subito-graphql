@@ -1,7 +1,7 @@
 import { Calculator, Data, Datte } from 'subito-lib';
 import type { ParseType } from 'subito-lib';
 import moment from 'moment';
-import type { IDocument } from './ArrayRepository';
+import type { IDocument } from './ArrayRepository.js';
 
 export type PaginatorArgs = {
   first: number
