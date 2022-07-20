@@ -53,6 +53,10 @@ abstract class Policy {
     return null;
   }
 
+  public readMany({ docs }: { docs: AnyObject[] }) {
+    return docs.map((doc) => this.read({ doc }));
+  }
+
   public create() {
     if (!this.isAdmin()) {
       Thrower.forbidden();

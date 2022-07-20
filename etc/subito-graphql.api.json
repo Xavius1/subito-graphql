@@ -1418,6 +1418,62 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#readMany:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readMany({ docs }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        docs: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[];\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ docs }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "readMany"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#update:member(1)",
               "docComment": "",
               "excerptTokens": [

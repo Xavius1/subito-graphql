@@ -109,6 +109,10 @@ export abstract class Policy {
     // (undocumented)
     read({ doc }: AnyObject): any;
     // (undocumented)
+    readMany({ docs }: {
+        docs: AnyObject[];
+    }): any[];
+    // (undocumented)
     update(): boolean;
     // (undocumented)
     protected viewer: AnyObject | null;
