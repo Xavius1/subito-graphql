@@ -1375,7 +1375,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "read({ doc }: "
+                  "text": "read(doc: "
                 },
                 {
                   "kind": "Reference",
@@ -1387,8 +1387,13 @@
                   "text": "): "
                 },
                 {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
                   "kind": "Content",
-                  "text": "any"
+                  "text": " | null"
                 },
                 {
                   "kind": "Content",
@@ -1398,14 +1403,14 @@
               "isStatic": false,
               "returnTypeTokenRange": {
                 "startIndex": 3,
-                "endIndex": 4
+                "endIndex": 5
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "{ doc }",
+                  "parameterName": "doc",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -1423,11 +1428,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readMany({ docs }: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "{\n        docs: "
+                  "text": "readMany(docs: "
                 },
                 {
                   "kind": "Reference",
@@ -1436,7 +1437,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "[];\n    }"
+                  "text": "[]"
                 },
                 {
                   "kind": "Content",
@@ -1444,7 +1445,16 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "any[]"
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null)[]"
                 },
                 {
                   "kind": "Content",
@@ -1453,18 +1463,18 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 4,
+                "endIndex": 7
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "{ docs }",
+                  "parameterName": "docs",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 4
+                    "endIndex": 3
                   },
                   "isOptional": false
                 }

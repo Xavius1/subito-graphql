@@ -107,11 +107,9 @@ export abstract class Policy {
     // (undocumented)
     protected isAdmin(): any;
     // (undocumented)
-    read({ doc }: AnyObject): any;
+    read(doc: AnyObject): AnyObject | null;
     // (undocumented)
-    readMany({ docs }: {
-        docs: AnyObject[];
-    }): any[];
+    readMany(docs: AnyObject[]): (AnyObject | null)[];
     // (undocumented)
     update(): boolean;
     // (undocumented)
