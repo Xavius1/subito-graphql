@@ -56,8 +56,12 @@ abstract class Policy {
     return null;
   }
 
-  public readMany(docs: AnyObject[]) {
-    return docs.map((doc) => this.read({ doc }));
+  public readMany(docs: AnyObject[], keepNull?: true) {
+    if (keepNull) {
+      return docs.map((doc) => this.read({ doc }));
+    }
+
+    return docs.filter((doc) => this.read({ doc }));
   }
 
   public create() {
