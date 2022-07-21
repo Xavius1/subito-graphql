@@ -57,11 +57,15 @@ abstract class Policy {
   }
 
   public readMany(docs: AnyObject[], keepNull?: true) {
-    if (keepNull) {
-      return docs.map((doc) => this.read({ doc }));
-    }
+    const items: (AnyObject | null)[] = [];
+    docs.forEach((doc) => {
+      const item = this.read(doc);
+      if (item || keepNull) {
+        items.push(item);
+      }
+    });
 
-    return docs.filter((doc) => this.read({ doc }));
+    return items;
   }
 
   public create() {
