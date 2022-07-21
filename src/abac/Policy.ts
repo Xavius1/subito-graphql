@@ -36,7 +36,10 @@ abstract class Policy {
   }
 
   protected hasRole(role: string) {
-    // @ts-ignore TODO handle it
+    if (!this.viewer) {
+      return false;
+    }
+
     const { roles = [] } = this.viewer;
     return roles.include(role);
   }
@@ -45,7 +48,7 @@ abstract class Policy {
     return this.hasRole(e.ROLE_ADMIN);
   }
 
-  public read({ doc }: AnyObject) {
+  public read(doc: AnyObject) {
     if (this.isAdmin()) {
       return doc;
     }
@@ -53,7 +56,7 @@ abstract class Policy {
     return null;
   }
 
-  public readMany({ docs }: { docs: AnyObject[] }) {
+  public readMany(docs: AnyObject[]) {
     return docs.map((doc) => this.read({ doc }));
   }
 
