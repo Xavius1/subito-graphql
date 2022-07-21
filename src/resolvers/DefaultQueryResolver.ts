@@ -60,7 +60,7 @@ const DefaultQueryResolver = (source: string) => ({
     }
 
     return Abac[source].read(
-      dataSources[`${source}s`].findOneByFields({ [type.toLowerCase()]: id }),
+      await dataSources[`${source}s`].findOneByFields({ [type.toLowerCase()]: id }),
     );
   },
 
@@ -77,7 +77,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readManyByCursor(
-      dataSources[`${source}s`].findByCursor(
+      await dataSources[`${source}s`].findByCursor(
         resolveCursors(args),
       ),
     );
@@ -97,7 +97,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readMany(
-      dataSources[`${source}s`].findAll(args),
+      await dataSources[`${source}s`].findAll(args),
     );
   },
 });
