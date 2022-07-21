@@ -76,7 +76,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { dataSources } = context;
     const { Abac } = dataSources;
 
-    return Abac[source].readManyByCursor(
+    return Abac[source].readMany(
       await dataSources[`${source}s`].findByCursor(
         resolveCursors(args),
       ),
