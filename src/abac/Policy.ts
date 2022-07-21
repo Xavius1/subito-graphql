@@ -41,7 +41,7 @@ abstract class Policy {
     }
 
     const { roles = [] } = this.viewer;
-    return roles.include(role);
+    return roles.includes(role);
   }
 
   protected isAdmin() {
