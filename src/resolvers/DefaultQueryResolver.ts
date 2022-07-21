@@ -53,14 +53,14 @@ const DefaultQueryResolver = (source: string) => ({
 
     if (type === 'ID' || !type) {
       return Abac[source].read(
-        dataSources[`${source}s`].getOneById(
+        dataSources[`${source}s`].findOneById(
           GID.decode(id, true),
         ),
       );
     }
 
     return Abac[source].read(
-      dataSources[`${source}s`].getOneByFields({ [type.toLowerCase()]: id }),
+      dataSources[`${source}s`].findOneByFields({ [type.toLowerCase()]: id }),
     );
   },
 
@@ -77,7 +77,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readManyByCursor(
-      dataSources[`${source}s`].getByCursor(
+      dataSources[`${source}s`].findByCursor(
         resolveCursors(args),
       ),
     );
@@ -97,7 +97,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readMany(
-      dataSources[`${source}s`].getAll(args),
+      dataSources[`${source}s`].findAll(args),
     );
   },
 });
