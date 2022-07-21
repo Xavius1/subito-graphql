@@ -1441,6 +1441,14 @@
                 },
                 {
                   "kind": "Content",
+                  "text": ", keepNull?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "true"
+                },
+                {
+                  "kind": "Content",
                   "text": "): "
                 },
                 {
@@ -1463,8 +1471,8 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 4,
-                "endIndex": 7
+                "startIndex": 6,
+                "endIndex": 9
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -1477,6 +1485,14 @@
                     "endIndex": 3
                   },
                   "isOptional": false
+                },
+                {
+                  "parameterName": "keepNull",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
                 }
               ],
               "isOptional": false,

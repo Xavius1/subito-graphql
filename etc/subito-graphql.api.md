@@ -109,7 +109,7 @@ export abstract class Policy {
     // (undocumented)
     read(doc: AnyObject): AnyObject | null;
     // (undocumented)
-    readMany(docs: AnyObject[]): (AnyObject | null)[];
+    readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
     // (undocumented)
     update(): boolean;
     // (undocumented)
