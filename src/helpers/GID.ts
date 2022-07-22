@@ -65,7 +65,12 @@ class GID {
       .toString('binary')
       .split('/');
 
-    const parsedId: string | number = JSON.parse(id);
+    let parsedId: string | number = id;
+    try {
+      parsedId = JSON.parse(id);
+    } catch (err) {
+      // do nothing
+    }
     const parsedVersion = parseFloat(version);
 
     let parsedData = {};
