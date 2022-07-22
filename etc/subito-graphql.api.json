@@ -1205,7 +1205,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#create:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if a doc can be create, then throw if not\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1235,7 +1235,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#delete:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if a doc can be deleted, then throw if not\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1265,7 +1265,7 @@
             {
               "kind": "Property",
               "canonicalReference": "subito-graphql!Policy#gateway:member",
-              "docComment": "",
+              "docComment": "/**\n * The current gateway\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1294,7 +1294,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#hasRole:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if the current user has a role\n *\n * @param role - The role to check\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1310,7 +1310,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "any"
+                  "text": "boolean"
                 },
                 {
                   "kind": "Content",
@@ -1341,7 +1341,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#isAdmin:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if the user is an admin\n *\n * @remarks\n *\n * Shotcut to hasRole() method\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1349,7 +1349,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "any"
+                  "text": "boolean"
                 },
                 {
                   "kind": "Content",
@@ -1371,7 +1371,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#read:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Read a doc\n *\n * @param doc - the doc to read\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1424,7 +1424,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#readMany:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Read an array of docs\n *\n * @param docs - The docs to read\n *\n * @param keepNull - If you want to keep a null entry if the doc is not allowed\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1500,8 +1500,65 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#readManyByCursor:member(1)",
+              "docComment": "/**\n * Read a list of doc listed by cursor\n *\n * @param docs - The list of docs\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readManyByCursor(docs: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadManyByCursorInput",
+                  "canonicalReference": "subito-graphql!ReadManyByCursorInput:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        edges: {\n            cursor: string;\n            node: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null;\n        }[];\n        pageInfo: {\n            hasNextPage: boolean;\n            hasPreviousPage: boolean;\n            totalPage: number;\n            totalResults: number;\n            currentPage: number;\n            startCursor: string;\n            endCursor: string;\n        };\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "docs",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "readManyByCursor"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#update:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if a doc can be updated, then throw if not\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1531,7 +1588,7 @@
             {
               "kind": "Property",
               "canonicalReference": "subito-graphql!Policy#viewer:member",
-              "docComment": "",
+              "docComment": "/**\n * The current viewer\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

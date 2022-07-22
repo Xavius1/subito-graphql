@@ -96,23 +96,30 @@ export abstract class Policy {
         viewer: any;
         gateway: any;
     });
-    // (undocumented)
     create(): boolean;
-    // (undocumented)
     delete(): boolean;
-    // (undocumented)
     protected gateway: null;
-    // (undocumented)
-    protected hasRole(role: string): any;
-    // (undocumented)
-    protected isAdmin(): any;
-    // (undocumented)
+    protected hasRole(role: string): boolean;
+    protected isAdmin(): boolean;
     read(doc: AnyObject): AnyObject | null;
-    // (undocumented)
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
-    // (undocumented)
+    // Warning: (ae-forgotten-export) The symbol "ReadManyByCursorInput" needs to be exported by the entry point index.d.ts
+    readManyByCursor(docs: ReadManyByCursorInput): {
+        edges: {
+            cursor: string;
+            node: AnyObject | null;
+        }[];
+        pageInfo: {
+            hasNextPage: boolean;
+            hasPreviousPage: boolean;
+            totalPage: number;
+            totalResults: number;
+            currentPage: number;
+            startCursor: string;
+            endCursor: string;
+        };
+    };
     update(): boolean;
-    // (undocumented)
     protected viewer: AnyObject | null;
 }
 
