@@ -1,6 +1,6 @@
 {
   "name": "subito-graphql",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "description": "Library for subito micro services using GraphQL interface",
   "main": "./dist/index.js",
   "typings": "./dist/subito-graphql.d.ts",
