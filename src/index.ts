@@ -25,6 +25,9 @@ export { default as DefaultPageInfoResolver } from './resolvers/DefaultPageInfoR
 export { default as DefaultQueryResolver } from './resolvers/DefaultQueryResolver.js';
 export { graphqlScalarsResolvers as DefaultScalarsResolver } from './resolvers/DefaultScalarsResolver.js';
 
+// Repositories
+export { default as Repository } from './repositories/Repository.js';
+
 export type AnyObject = {
   [key: string]: any
 }
