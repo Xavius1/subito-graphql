@@ -297,7 +297,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "subito-graphql!AnyObject:type",
-          "docComment": "",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -322,7 +322,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultCursorResolver:var",
-          "docComment": "",
+          "docComment": "/**\n * Create a generic cursor resolver\n *\n * @param type - The entity type\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -353,7 +353,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultEntityResolver:var",
-          "docComment": "",
+          "docComment": "/**\n * Create a generic entity resolver\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -393,7 +393,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultMutationResolver:var",
-          "docComment": "",
+          "docComment": "/**\n * Create a generic mutation resolver\n *\n * @param source - The name of the data source\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -523,7 +523,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultPageInfoResolver:var",
-          "docComment": "",
+          "docComment": "/**\n * Create a generic page info resolver\n *\n * @param type - The entity type\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -858,7 +858,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!failPayload:var",
-          "docComment": "/**\n * @public\n */\n",
+          "docComment": "/**\n * Send a failed payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1123,7 +1123,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!mutationPayload:var",
-          "docComment": "",
+          "docComment": "/**\n * Send a mutation payload\n *\n * @param doc - The mutated doc\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1623,9 +1623,129 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "Class",
+          "canonicalReference": "subito-graphql!Repository:class",
+          "docComment": "/**\n * Abstract class repository\n *\n * @remarks\n *\n * Use this abstract class when you create a new repository TODO: Handle cache\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare abstract class Repository extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "DataSource",
+              "canonicalReference": "apollo-datasource!DataSource:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Context",
+              "canonicalReference": "subito-lib!Context:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Repository",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "subito-graphql!Repository#context:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Context",
+                  "canonicalReference": "subito-lib!Context:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": true
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Repository#initialize:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "initialize({ context, }?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [key: string]: any;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ context, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "initialize"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          },
+          "implementsTokenRanges": []
+        },
+        {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!successPayload:var",
-          "docComment": "",
+          "docComment": "/**\n * Send a success payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

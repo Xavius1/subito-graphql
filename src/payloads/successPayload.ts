@@ -1,5 +1,12 @@
 import type { TPayloadInput, TPayload } from './mutationPayload.js';
 
+/**
+ * Send a success payload
+ * @param input - The payload input
+ * @returns
+ *
+ * @public
+ */
 const successPayload = function successPayloadResponse({
   message,
   data,

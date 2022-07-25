@@ -4,6 +4,8 @@
 
 ```ts
 
+import type { Context } from 'subito-lib';
+import { DataSource } from 'apollo-datasource';
 import { resolvers as DefaultScalarsResolver } from 'graphql-scalars';
 import type { DocumentNode } from 'graphql';
 
@@ -24,24 +26,24 @@ export type AnyObject = {
     [key: string]: any;
 };
 
-// @public (undocumented)
+// @public
 export const DefaultCursorResolver: (type: string) => {
     cursor({ cursor }: CursorProps): string;
 };
 
-// @public (undocumented)
+// @public
 export const DefaultEntityResolver: {
     id(obj: AnyObject | null, _args: any, _context: any, { parentType }: InfoProps): string | null;
 };
 
-// @public (undocumented)
+// @public
 export const DefaultMutationResolver: (source: string) => {
     create({ input }: CreateProps, context: AnyObject): Promise<TPayload>;
     update({ input }: UpdateProps, context: AnyObject): Promise<TPayload>;
     delete({ input }: DeleteProps, context: AnyObject): Promise<TPayload>;
 };
 
-// @public (undocumented)
+// @public
 export const DefaultPageInfoResolver: (type: string) => {
     startCursor({ startCursor }: CursorProps_2): string | null;
     endCursor({ endCursor }: CursorProps_2): string | null;
@@ -67,7 +69,7 @@ export class Entity {
 
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
 //
-// @public (undocumented)
+// @public
 export const failPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
 
 // @public
@@ -87,7 +89,7 @@ export class GID {
     static encode(type: string, id: string | number, data?: Object | string | number): string;
 }
 
-// @public (undocumented)
+// @public
 export const mutationPayload: (doc?: DocumentNode) => TPayload;
 
 // @public
@@ -123,18 +125,28 @@ export abstract class Policy {
     protected viewer: AnyObject | null;
 }
 
-// @public (undocumented)
+// @public
+export abstract class Repository extends DataSource<Context> {
+    // (undocumented)
+    protected context: Context | undefined;
+    // (undocumented)
+    initialize({ context, }?: {
+        [key: string]: any;
+    }): void;
+}
+
+// @public
 export const successPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
 
 // Warnings were encountered during analysis:
 //
-// src/resolvers/DefaultCursorResolver.ts:8:44 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultEntityResolver.ts:8:28 - (ae-forgotten-export) The symbol "InfoProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:26:48 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:26:48 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:28:9 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:41:9 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultPageInfoResolver.ts:9:46 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultCursorResolver.ts:25:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultEntityResolver.ts:24:3 - (ae-forgotten-export) The symbol "InfoProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:49:3 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:49:3 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:71:3 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:97:3 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultPageInfoResolver.ts:27:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultQueryResolver.ts:50:3 - (ae-forgotten-export) The symbol "GetOneProps" needs to be exported by the entry point index.d.ts
 
 ```

@@ -28,6 +28,7 @@ export { graphqlScalarsResolvers as DefaultScalarsResolver } from './resolvers/D
 // Repositories
 export { default as Repository } from './repositories/Repository.js';
 
+/** @public */
 export type AnyObject = {
   [key: string]: any
 }

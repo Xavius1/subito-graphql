@@ -2,6 +2,7 @@ import type { DocumentNode } from 'graphql';
 import failPayload from './failPayload.js';
 import successPayload from './successPayload.js';
 
+/** @public */
 export type TPayloadInput = {
   message: string,
   data: any,
@@ -10,6 +11,7 @@ export type TPayloadInput = {
   keyData?: string,
 }
 
+/** @public */
 export type TPayload = {
   message: string,
   success: boolean,
@@ -17,6 +19,13 @@ export type TPayload = {
   [keyData: string]: any,
 }
 
+/**
+ * Send a mutation payload
+ * @param doc - The mutated doc
+ * @returns
+ *
+ * @public
+ */
 const mutationPayload = function mutationPayload(doc?: DocumentNode) {
   if (doc) {
     return successPayload({
