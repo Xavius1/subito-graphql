@@ -103,7 +103,7 @@ export abstract class Policy {
     protected gateway: null;
     protected hasRole(role: string): boolean;
     protected isAdmin(): boolean;
-    read(doc: AnyObject): AnyObject | null;
+    read(doc: AnyObject | null): AnyObject | null;
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
     // Warning: (ae-forgotten-export) The symbol "ReadManyByCursorInput" needs to be exported by the entry point index.d.ts
     readManyByCursor(docs: ReadManyByCursorInput): {
@@ -119,7 +119,7 @@ export abstract class Policy {
             currentPage: number;
             startCursor: string;
             endCursor: string;
-        };
+        } | null;
     };
     update(): boolean;
     protected viewer: AnyObject | null;

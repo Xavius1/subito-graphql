@@ -1384,6 +1384,10 @@
                 },
                 {
                   "kind": "Content",
+                  "text": " | null"
+                },
+                {
+                  "kind": "Content",
                   "text": "): "
                 },
                 {
@@ -1402,8 +1406,8 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
+                "startIndex": 4,
+                "endIndex": 6
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -1413,7 +1417,7 @@
                   "parameterName": "doc",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 2
+                    "endIndex": 3
                   },
                   "isOptional": false
                 }
@@ -1527,7 +1531,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": " | null;\n        }[];\n        pageInfo: {\n            hasNextPage: boolean;\n            hasPreviousPage: boolean;\n            totalPage: number;\n            totalResults: number;\n            currentPage: number;\n            startCursor: string;\n            endCursor: string;\n        };\n    }"
+                  "text": " | null;\n        }[];\n        pageInfo: {\n            hasNextPage: boolean;\n            hasPreviousPage: boolean;\n            totalPage: number;\n            totalResults: number;\n            currentPage: number;\n            startCursor: string;\n            endCursor: string;\n        } | null;\n    }"
                 },
                 {
                   "kind": "Content",
