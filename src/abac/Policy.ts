@@ -12,7 +12,7 @@ export type ReadManyByCursorInput = {
     currentPage: number
     startCursor: string
     endCursor: string
-  }
+  } | null
 }
 /**
  * Abstract class to implements Abac policy control
@@ -96,7 +96,7 @@ abstract class Policy {
    *
    * @public
    */
-  public read(doc: AnyObject) {
+  public read(doc: AnyObject | null) {
     if (this.isAdmin()) {
       return doc;
     }
@@ -116,6 +116,7 @@ abstract class Policy {
     docs.edges.forEach((edge, index) => {
       items.edges[index].node = edge.node ? this.read(edge.node) : null;
     });
+    items.pageInfo = <ReadManyByCursorInput["pageInfo"] | null>this.read(docs.pageInfo);
 
     return items;
   }
