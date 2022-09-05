@@ -53,9 +53,9 @@ const DefaultMutationResolver = (source: string) => ({
     Abac[source].create({ input });
 
     return mutationPayload(
-      Abac[source].read({
-        doc: await dataSources[`${source}s`].createDoc(input, context),
-      }),
+      Abac[source].read(
+        await dataSources[`${source}s`].createDoc(input, context),
+      ),
     );
   },
 
@@ -76,12 +76,12 @@ const DefaultMutationResolver = (source: string) => ({
     Abac[source].update({ input });
 
     return mutationPayload(
-      Abac[source].read({
-        doc: await dataSources[`${source}s`].updateDoc({
+      Abac[source].read(
+        await dataSources[`${source}s`].updateDoc({
           id: GID.decode(id, true),
           values,
         }, context),
-      }),
+      ),
     );
   },
 
@@ -106,7 +106,7 @@ const DefaultMutationResolver = (source: string) => ({
     }, context);
 
     return mutationPayload(
-      Abac[source].read({ doc }),
+      Abac[source].read(doc),
     );
   },
 });
