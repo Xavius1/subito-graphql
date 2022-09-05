@@ -1,6 +1,6 @@
 import { AnyObject } from '..';
 import GID from '../helpers/GID.js';
-import plural from './helpers/plural';
+import plural from './helpers/plural.js';
 
 /**
  * @internal

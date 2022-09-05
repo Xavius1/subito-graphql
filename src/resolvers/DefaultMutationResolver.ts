@@ -1,7 +1,7 @@
 import { AnyObject } from '..';
 import GID from '../helpers/GID.js';
 import mutationPayload from '../payloads/mutationPayload.js';
-import plural from './helpers/plural';
+import plural from './helpers/plural.js';
 
 /** @public */
 export type CreateProps = {
