@@ -142,11 +142,11 @@ export const successPayload: ({ message, data, success, code, keyData, }: TPaylo
 //
 // src/resolvers/DefaultCursorResolver.ts:25:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultEntityResolver.ts:24:3 - (ae-forgotten-export) The symbol "InfoProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:49:3 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:49:3 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:71:3 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:97:3 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:50:3 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:50:3 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:72:3 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultMutationResolver.ts:98:3 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultPageInfoResolver.ts:27:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultQueryResolver.ts:50:3 - (ae-forgotten-export) The symbol "GetOneProps" needs to be exported by the entry point index.d.ts
+// src/resolvers/DefaultQueryResolver.ts:51:3 - (ae-forgotten-export) The symbol "GetOneProps" needs to be exported by the entry point index.d.ts
 
 ```
