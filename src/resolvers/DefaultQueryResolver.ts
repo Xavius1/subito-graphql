@@ -1,5 +1,6 @@
 import { AnyObject } from '..';
 import GID from '../helpers/GID.js';
+import plural from './helpers/plural';
 
 /**
  * @internal
@@ -53,14 +54,14 @@ const DefaultQueryResolver = (source: string) => ({
 
     if (type === 'ID' || !type) {
       return Abac[source].read(
-        await dataSources[`${source}s`].findOneById(
+        await dataSources[plural(source)].findOne(
           GID.decode(id, true),
         ),
       );
     }
 
     return Abac[source].read(
-      await dataSources[`${source}s`].findOneByFields({ [type.toLowerCase()]: id }),
+      await dataSources[plural(source)].findOneByFields({ [type.toLowerCase()]: id }),
     );
   },
 
@@ -77,7 +78,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readManyByCursor(
-      await dataSources[`${source}s`].findByCursor(
+      await dataSources[plural(source)].findByCursor(
         resolveCursors(args),
       ),
     );
@@ -97,7 +98,7 @@ const DefaultQueryResolver = (source: string) => ({
     const { Abac } = dataSources;
 
     return Abac[source].readMany(
-      await dataSources[`${source}s`].findAll(args),
+      await dataSources[plural(source)].findAll(args),
     );
   },
 });

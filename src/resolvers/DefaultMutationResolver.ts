@@ -1,6 +1,7 @@
 import { AnyObject } from '..';
 import GID from '../helpers/GID.js';
 import mutationPayload from '../payloads/mutationPayload.js';
+import plural from './helpers/plural';
 
 /** @public */
 export type CreateProps = {
@@ -54,7 +55,7 @@ const DefaultMutationResolver = (source: string) => ({
 
     return mutationPayload(
       Abac[source].read(
-        await dataSources[`${source}s`].createDoc(input, context),
+        await dataSources[plural(source)].createDoc(input, context),
       ),
     );
   },
@@ -77,7 +78,7 @@ const DefaultMutationResolver = (source: string) => ({
 
     return mutationPayload(
       Abac[source].read(
-        await dataSources[`${source}s`].updateDoc({
+        await dataSources[plural(source)].updateDoc({
           id: GID.decode(id, true),
           values,
         }, context),
@@ -101,7 +102,7 @@ const DefaultMutationResolver = (source: string) => ({
 
     Abac[source].update({ input });
 
-    const { doc } = await dataSources[`${source}s`].delete({
+    const { doc } = await dataSources[plural(source)].delete({
       id: GID.decode(id, true),
     }, context);
 
