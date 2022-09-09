@@ -116,7 +116,7 @@ abstract class Policy {
     docs.edges.forEach((edge, index) => {
       items.edges[index].node = edge.node ? this.read(edge.node) : null;
     });
-    items.pageInfo = <ReadManyByCursorInput["pageInfo"] | null>this.read(docs.pageInfo);
+    items.pageInfo = <ReadManyByCursorInput['pageInfo'] | null>(this.read(docs.pageInfo));
 
     return items;
   }

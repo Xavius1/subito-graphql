@@ -32,3 +32,5 @@ export { default as Repository } from './repositories/Repository.js';
 export type AnyObject = {
   [key: string]: any
 }
+/** @public */
+export type { DocumentNode } from 'graphql';

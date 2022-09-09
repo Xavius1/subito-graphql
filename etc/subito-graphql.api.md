@@ -7,7 +7,7 @@
 import type { Context } from 'subito-lib';
 import { DataSource } from 'apollo-datasource';
 import { resolvers as DefaultScalarsResolver } from 'graphql-scalars';
-import type { DocumentNode } from 'graphql';
+import { DocumentNode } from 'graphql';
 
 // @public
 export abstract class Abac {
@@ -57,6 +57,8 @@ export const DefaultQueryResolver: (source: string) => {
 };
 
 export { DefaultScalarsResolver }
+
+export { DocumentNode }
 
 // @public
 export class Entity {
