@@ -6,7 +6,7 @@ This package is as dependency of all Subito Micro Services that using the Graphq
 
 [See API Documentation](https://github.com/Xavius1/subito-doc/blob/main/doc/index.md)
 
-This package define & use theses following env vars.
+This package define & use these following env vars.
 
 | NAME | type | default value | allowed values | immutable |
 | ---- | ---- | ------------- | -------------- | --------- |
