@@ -54,7 +54,7 @@ const DefaultQueryResolver = (source: string) => ({
 
     if (type === 'ID' || !type) {
       return Abac[source].read(
-        await dataSources[plural(source)].findOne(
+        await dataSources[plural(source)].findOneById(
           GID.decode(id, true),
         ),
       );
