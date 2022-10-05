@@ -111,7 +111,7 @@ export const payload: ({ message, data, code, keyData, }: PayloadInput) => Paylo
 // @public (undocumented)
 export type PayloadInput = {
     message?: string;
-    data: any;
+    data?: any;
     code?: number;
     keyData?: string;
 };

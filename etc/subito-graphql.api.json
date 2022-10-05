@@ -1276,7 +1276,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    message?: string;\n    data: any;\n    code?: number;\n    keyData?: string;\n}"
+              "text": "{\n    message?: string;\n    data?: any;\n    code?: number;\n    keyData?: string;\n}"
             },
             {
               "kind": "Content",
