@@ -26,13 +26,18 @@ export type PayloadResponse = {
 const payload = function payloadResponse({
   message,
   data,
-  code = 200,
+  code,
   keyData = 'node',
 }: PayloadInput): PayloadResponse {
+  let finalCode = 200;
+  if (!code && !data) {
+    finalCode = 500;
+  }
+
   return {
-    code,
-    success: (code < 300),
-    message: (message || messageFromCode[code]),
+    code: finalCode,
+    success: (finalCode < 300),
+    message: (message || messageFromCode[finalCode]),
     [keyData]: data,
   };
 };

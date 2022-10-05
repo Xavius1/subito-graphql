@@ -1,6 +1,6 @@
 import { AnyObject } from '..';
 import GID from '../helpers/GID.js';
-import mutationPayload from '../payloads/mutationPayload.js';
+import payload from '../payloads/payload.js';
 import plural from './helpers/plural.js';
 
 /** @public */
@@ -53,11 +53,11 @@ const DefaultMutationResolver = (source: string) => ({
 
     Abac[source].create({ input });
 
-    return mutationPayload(
-      Abac[source].read(
+    return payload({
+      data: Abac[source].read(
         await dataSources[plural(source)].createDoc(input, context),
       ),
-    );
+    });
   },
 
   /**
@@ -76,14 +76,14 @@ const DefaultMutationResolver = (source: string) => ({
 
     Abac[source].update({ input });
 
-    return mutationPayload(
-      Abac[source].read(
+    return payload({
+      data: Abac[source].read(
         await dataSources[plural(source)].updateDoc({
           id: GID.decode(id, true),
-          values,
+          query: { $set: { ...values } },
         }, context),
       ),
-    );
+    });
   },
 
   /**
@@ -106,9 +106,9 @@ const DefaultMutationResolver = (source: string) => ({
       id: GID.decode(id, true),
     }, context);
 
-    return mutationPayload(
-      Abac[source].read(doc),
-    );
+    return payload({
+      data: Abac[source].read(doc),
+    });
   },
 });
 
