@@ -71,7 +71,7 @@ export class Entity {
 
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
 //
-// @public
+// @public @deprecated
 export const failPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
 
 // @public
@@ -91,8 +91,19 @@ export class GID {
     static encode(type: string, id: string | number, data?: Object | string | number): string;
 }
 
+// Warning: (ae-forgotten-export) The symbol "Message" needs to be exported by the entry point index.d.ts
+//
 // @public
+export const message: Message;
+
+// @public @deprecated
 export const mutationPayload: (doc?: DocumentNode) => TPayload;
+
+// Warning: (ae-forgotten-export) The symbol "PayloadInput" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "PayloadResponse" needs to be exported by the entry point index.d.ts
+//
+// @public
+export const payload: ({ message, data, code, keyData, }: PayloadInput) => PayloadResponse;
 
 // @public
 export abstract class Policy {
@@ -137,7 +148,7 @@ export abstract class Repository extends DataSource<Context> {
     }): void;
 }
 
-// @public
+// @public @deprecated
 export const successPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
 
 // Warnings were encountered during analysis:

@@ -858,7 +858,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!failPayload:var",
-          "docComment": "/**\n * Send a failed payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
+          "docComment": "/**\n * Send a failed payload\n *\n * @deprecated\n *\n * Use the new {@link payload} instead\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1122,8 +1122,31 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "subito-graphql!message:var",
+          "docComment": "/**\n * List of http message\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "message: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Message",
+              "canonicalReference": "subito-graphql!Message:type"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "message",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "subito-graphql!mutationPayload:var",
-          "docComment": "/**\n * Send a mutation payload\n *\n * @param doc - The mutated doc\n *\n * @returns \n *\n * @public\n */\n",
+          "docComment": "/**\n * Send a mutation payload\n *\n * @deprecated\n *\n * Use the new {@link payload} instead\n *\n * @param doc - The mutated doc\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1151,6 +1174,42 @@
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "mutationPayload",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!payload:var",
+          "docComment": "/**\n * Send a success payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "payload: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ message, data, code, keyData, }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PayloadInput",
+              "canonicalReference": "subito-graphql!PayloadInput:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "PayloadResponse",
+              "canonicalReference": "subito-graphql!PayloadResponse:type"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "payload",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 5
@@ -1749,7 +1808,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!successPayload:var",
-          "docComment": "/**\n * Send a success payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
+          "docComment": "/**\n * Send a success payload\n *\n * @deprecated\n *\n * Use the new {@link payload} instead\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

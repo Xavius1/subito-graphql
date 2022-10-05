@@ -24,6 +24,7 @@ export type TPayload = {
  * @param doc - The mutated doc
  * @returns
  *
+ * @deprecated Use the new {@link payload} instead
  * @public
  */
 const mutationPayload = function mutationPayload(doc?: DocumentNode) {
