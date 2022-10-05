@@ -26,6 +26,9 @@ export type AnyObject = {
     [key: string]: any;
 };
 
+// @public (undocumented)
+export type Code = (200 | 201 | 202 | 204 | 290 | 400 | 401 | 403 | 404 | 409 | 410 | 500 | 501);
+
 // @public
 export const DefaultCursorResolver: (type: string) => {
     cursor({ cursor }: CursorProps): string;
@@ -91,19 +94,35 @@ export class GID {
     static encode(type: string, id: string | number, data?: Object | string | number): string;
 }
 
-// Warning: (ae-forgotten-export) The symbol "Message" needs to be exported by the entry point index.d.ts
-//
+// @public (undocumented)
+export type Message = {
+    [key: number]: string;
+};
+
 // @public
 export const message: Message;
 
 // @public @deprecated
 export const mutationPayload: (doc?: DocumentNode) => TPayload;
 
-// Warning: (ae-forgotten-export) The symbol "PayloadInput" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "PayloadResponse" needs to be exported by the entry point index.d.ts
-//
 // @public
 export const payload: ({ message, data, code, keyData, }: PayloadInput) => PayloadResponse;
+
+// @public (undocumented)
+export type PayloadInput = {
+    message?: string;
+    data: any;
+    code?: number;
+    keyData?: string;
+};
+
+// @public (undocumented)
+export type PayloadResponse = {
+    message: string;
+    success: boolean;
+    code: number;
+    [keyData: string]: any;
+};
 
 // @public
 export abstract class Policy {

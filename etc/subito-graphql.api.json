@@ -320,6 +320,31 @@
           }
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!Code:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Code = "
+            },
+            {
+              "kind": "Content",
+              "text": "(200 | 201 | 202 | 204 | 290 | 400 | 401 | 403 | 404 | 409 | 410 | 500 | 501)"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Code",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!DefaultCursorResolver:var",
           "docComment": "/**\n * Create a generic cursor resolver\n *\n * @param type - The entity type\n *\n * @returns \n *\n * @public\n */\n",
@@ -1121,6 +1146,31 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!Message:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Message = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: number]: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Message",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!message:var",
           "docComment": "/**\n * List of http message\n *\n * @public\n */\n",
@@ -1213,6 +1263,56 @@
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 5
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!PayloadInput:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type PayloadInput = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    message?: string;\n    data: any;\n    code?: number;\n    keyData?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PayloadInput",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!PayloadResponse:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type PayloadResponse = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    message: string;\n    success: boolean;\n    code: number;\n    [keyData: string]: any;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PayloadResponse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
           }
         },
         {
