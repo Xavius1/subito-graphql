@@ -453,12 +453,12 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload.js\")."
+              "text": "<import(\"..\")."
             },
             {
               "kind": "Reference",
-              "text": "TPayload",
-              "canonicalReference": "subito-graphql!TPayload:type"
+              "text": "PayloadResponse",
+              "canonicalReference": "subito-graphql!PayloadResponse:type"
             },
             {
               "kind": "Content",
@@ -489,12 +489,12 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload.js\")."
+              "text": "<import(\"..\")."
             },
             {
               "kind": "Reference",
-              "text": "TPayload",
-              "canonicalReference": "subito-graphql!TPayload:type"
+              "text": "PayloadResponse",
+              "canonicalReference": "subito-graphql!PayloadResponse:type"
             },
             {
               "kind": "Content",
@@ -525,12 +525,12 @@
             },
             {
               "kind": "Content",
-              "text": "<import(\"../payloads/mutationPayload.js\")."
+              "text": "<import(\"..\")."
             },
             {
               "kind": "Reference",
-              "text": "TPayload",
-              "canonicalReference": "subito-graphql!TPayload:type"
+              "text": "PayloadResponse",
+              "canonicalReference": "subito-graphql!PayloadResponse:type"
             },
             {
               "kind": "Content",

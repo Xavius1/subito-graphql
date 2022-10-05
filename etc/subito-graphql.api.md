@@ -41,9 +41,9 @@ export const DefaultEntityResolver: {
 
 // @public
 export const DefaultMutationResolver: (source: string) => {
-    create({ input }: CreateProps, context: AnyObject): Promise<TPayload>;
-    update({ input }: UpdateProps, context: AnyObject): Promise<TPayload>;
-    delete({ input }: DeleteProps, context: AnyObject): Promise<TPayload>;
+    create({ input }: CreateProps, context: AnyObject): Promise<PayloadResponse>;
+    update({ input }: UpdateProps, context: AnyObject): Promise<PayloadResponse>;
+    delete({ input }: DeleteProps, context: AnyObject): Promise<PayloadResponse>;
 };
 
 // @public
@@ -73,6 +73,7 @@ export class Entity {
 }
 
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
 //
 // @public @deprecated
 export const failPayload: ({ message, data, success, code, keyData, }: TPayloadInput) => TPayload;
@@ -175,7 +176,6 @@ export const successPayload: ({ message, data, success, code, keyData, }: TPaylo
 // src/resolvers/DefaultCursorResolver.ts:25:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultEntityResolver.ts:24:3 - (ae-forgotten-export) The symbol "InfoProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultMutationResolver.ts:50:3 - (ae-forgotten-export) The symbol "CreateProps" needs to be exported by the entry point index.d.ts
-// src/resolvers/DefaultMutationResolver.ts:50:3 - (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultMutationResolver.ts:72:3 - (ae-forgotten-export) The symbol "UpdateProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultMutationResolver.ts:98:3 - (ae-forgotten-export) The symbol "DeleteProps" needs to be exported by the entry point index.d.ts
 // src/resolvers/DefaultPageInfoResolver.ts:27:3 - (ae-forgotten-export) The symbol "CursorProps" needs to be exported by the entry point index.d.ts
