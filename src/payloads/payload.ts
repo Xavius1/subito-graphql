@@ -3,7 +3,7 @@ import messageFromCode from '../helpers/message.js';
 /** @public */
 export type PayloadInput = {
   message?: string,
-  data: any,
+  data?: any,
   code?: number,
   keyData?: string,
 }
