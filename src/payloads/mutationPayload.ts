@@ -7,7 +7,7 @@ export type TPayloadInput = {
   message: string,
   data: any,
   success?: boolean,
-  code?: 200 | 403,
+  code?: number,
   keyData?: string,
 }
 
