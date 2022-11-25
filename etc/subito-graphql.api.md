@@ -131,6 +131,7 @@ export abstract class Policy {
         viewer: any;
         gateway: any;
     });
+    protected context: unknown;
     create(): boolean;
     delete(): boolean;
     protected gateway: null;

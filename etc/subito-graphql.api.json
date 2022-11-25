@@ -1362,6 +1362,35 @@
               ]
             },
             {
+              "kind": "Property",
+              "canonicalReference": "subito-graphql!Policy#context:member",
+              "docComment": "/**\n * The current context\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected context: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "unknown"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": true
+            },
+            {
               "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#create:member(1)",
               "docComment": "/**\n * Check if a doc can be create, then throw if not\n *\n * @returns \n *\n * @public\n */\n",
