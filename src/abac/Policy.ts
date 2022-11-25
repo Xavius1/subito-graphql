@@ -51,6 +51,13 @@ abstract class Policy {
    */
   protected gateway = null;
 
+  /**
+   * The current context
+   *
+   * @public
+   */
+  protected context: unknown;
+
   // @ts-ignore TODO handle it
   constructor({ viewer, gateway }) {
     this.viewer = viewer;

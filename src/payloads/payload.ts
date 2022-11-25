@@ -29,7 +29,7 @@ const payload = function payloadResponse({
   code,
   keyData = 'node',
 }: PayloadInput): PayloadResponse {
-  let finalCode = 200;
+  let finalCode = code || 200;
   if (!code && !data) {
     finalCode = 500;
   }
