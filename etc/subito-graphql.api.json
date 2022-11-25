@@ -301,7 +301,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare type AnyObject = "
+              "text": "export type AnyObject = "
             },
             {
               "kind": "Content",
@@ -326,7 +326,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare type Code = "
+              "text": "export type Code = "
             },
             {
               "kind": "Content",
@@ -1152,7 +1152,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare type Message = "
+              "text": "export type Message = "
             },
             {
               "kind": "Content",
@@ -1272,7 +1272,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare type PayloadInput = "
+              "text": "export type PayloadInput = "
             },
             {
               "kind": "Content",
@@ -1297,7 +1297,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare type PayloadResponse = "
+              "text": "export type PayloadResponse = "
             },
             {
               "kind": "Content",
