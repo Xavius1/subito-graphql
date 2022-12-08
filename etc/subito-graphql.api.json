@@ -1336,11 +1336,11 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor({ viewer, gateway }: "
+                  "text": "constructor({ viewer, gateway, app }: "
                 },
                 {
                   "kind": "Content",
-                  "text": "{\n        viewer: any;\n        gateway: any;\n    }"
+                  "text": "{\n        viewer: any;\n        gateway: any;\n        app: any;\n    }"
                 },
                 {
                   "kind": "Content",
@@ -1352,7 +1352,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "{ viewer, gateway }",
+                  "parameterName": "{ viewer, gateway, app }",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -1555,6 +1555,70 @@
               "parameters": [],
               "isOptional": false,
               "name": "isAdmin"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#isProxy:member(1)",
+              "docComment": "/**\n * Is the call done by a proxy ?\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected isProxy(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": true,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "isProxy"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "subito-graphql!Policy#proxy:member",
+              "docComment": "/**\n * The proxy\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected proxy: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AnyObject",
+                  "canonicalReference": "subito-graphql!AnyObject:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "proxy",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": true
             },
             {
               "kind": "Method",

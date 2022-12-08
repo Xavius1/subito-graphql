@@ -127,9 +127,10 @@ export type PayloadResponse = {
 
 // @public
 export abstract class Policy {
-    constructor({ viewer, gateway }: {
+    constructor({ viewer, gateway, app }: {
         viewer: any;
         gateway: any;
+        app: any;
     });
     protected context: unknown;
     create(): boolean;
@@ -137,6 +138,8 @@ export abstract class Policy {
     protected gateway: null;
     protected hasRole(role: string): boolean;
     protected isAdmin(): boolean;
+    protected isProxy(): boolean;
+    protected proxy: AnyObject | null;
     read(doc: AnyObject | null): AnyObject | null;
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
     // Warning: (ae-forgotten-export) The symbol "ReadManyByCursorInput" needs to be exported by the entry point index.d.ts

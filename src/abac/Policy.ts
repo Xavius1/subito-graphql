@@ -45,6 +45,13 @@ abstract class Policy {
   protected viewer: AnyObject | null = null;
 
   /**
+   * The proxy
+   *
+   * @public
+   */
+  protected proxy: AnyObject | null = null;
+
+  /**
    * The current gateway
    *
    * @public
@@ -59,9 +66,20 @@ abstract class Policy {
   protected context: unknown;
 
   // @ts-ignore TODO handle it
-  constructor({ viewer, gateway }) {
+  constructor({ viewer, gateway, app }) {
     this.viewer = viewer;
     this.gateway = gateway;
+    this.proxy = app;
+  }
+
+  /**
+   * Is the call done by a proxy ?
+   * @returns
+   *
+   * @public
+   */
+  protected isProxy() {
+    return !!(this.proxy);
   }
 
   /**
