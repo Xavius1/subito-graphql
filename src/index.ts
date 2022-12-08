@@ -9,6 +9,9 @@ export { default as Abac } from './abac/Abac.js';
 export { default as Policy } from './abac/Policy.js';
 export { default as Entity } from './abac/Entity.js';
 
+// env
+export { default as env } from './security/env.js';
+
 // Helpers
 export { default as GID } from './helpers/GID.js';
 export { default as message } from './helpers/message.js';
