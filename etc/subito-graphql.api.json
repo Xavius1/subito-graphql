@@ -882,6 +882,28 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "subito-graphql!env:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "env: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "env",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "subito-graphql!failPayload:var",
           "docComment": "/**\n * Send a failed payload\n *\n * @deprecated\n *\n * Use the new {@link payload} instead\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [

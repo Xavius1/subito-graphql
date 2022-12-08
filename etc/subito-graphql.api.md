@@ -72,6 +72,9 @@ export class Entity {
     remove(fields: string[]): this;
 }
 
+// @public (undocumented)
+export const env: any;
+
 // Warning: (ae-forgotten-export) The symbol "TPayloadInput" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "TPayload" needs to be exported by the entry point index.d.ts
 //
