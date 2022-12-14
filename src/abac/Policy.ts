@@ -2,6 +2,7 @@ import { Thrower } from 'subito-lib';
 import { AnyObject } from '..';
 import e from '../security/env.js';
 
+/** @public */
 export type ReadManyByCursorInput = {
   edges: {cursor: string, node: AnyObject | null}[]
   pageInfo: {
@@ -14,6 +15,12 @@ export type ReadManyByCursorInput = {
     endCursor: string
   } | null
 }
+
+/** @public */
+export type ReadManyByCursorOptions = {
+  keepIfNull?: boolean
+}
+
 /**
  * Abstract class to implements Abac policy control
  *
@@ -91,11 +98,11 @@ abstract class Policy {
    * @public
    */
   protected hasRole(role: string): boolean {
-    if (!this.viewer) {
+    if (!this.isAuth()) {
       return false;
     }
 
-    const { roles = [] } = this.viewer;
+    const { roles = [] } = <AnyObject>(this.viewer);
     return roles.includes(role);
   }
 
@@ -111,6 +118,17 @@ abstract class Policy {
    */
   protected isAdmin() {
     return this.hasRole(e.ROLE_ADMIN);
+  }
+
+  /**
+   * Check if the user is auth
+   *
+   * @returns
+   *
+   * @public
+   */
+  protected isAuth() {
+    return !!(this.viewer);
   }
 
   /**
@@ -136,10 +154,18 @@ abstract class Policy {
    *
    * @public
    */
-  public readManyByCursor(docs: ReadManyByCursorInput) {
+  public readManyByCursor(
+    docs: ReadManyByCursorInput,
+    { keepIfNull }: ReadManyByCursorOptions = {},
+  ) {
     const items = { ...docs };
     docs.edges.forEach((edge, index) => {
-      items.edges[index].node = edge.node ? this.read(edge.node) : null;
+      const doc = edge.node ? this.read(edge.node) : null;
+      if (doc || keepIfNull) {
+        items.edges[index].node = edge.node ? this.read(edge.node) : null;
+      } else {
+        items.edges.splice(index, 1);
+      }
     });
     items.pageInfo = <ReadManyByCursorInput['pageInfo'] | null>(this.read(docs.pageInfo));
 

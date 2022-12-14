@@ -141,12 +141,14 @@ export abstract class Policy {
     protected gateway: null;
     protected hasRole(role: string): boolean;
     protected isAdmin(): boolean;
+    protected isAuth(): boolean;
     protected isProxy(): boolean;
     protected proxy: AnyObject | null;
     read(doc: AnyObject | null): AnyObject | null;
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
     // Warning: (ae-forgotten-export) The symbol "ReadManyByCursorInput" needs to be exported by the entry point index.d.ts
-    readManyByCursor(docs: ReadManyByCursorInput): {
+    // Warning: (ae-forgotten-export) The symbol "ReadManyByCursorOptions" needs to be exported by the entry point index.d.ts
+    readManyByCursor(docs: ReadManyByCursorInput, { keepIfNull }?: ReadManyByCursorOptions): {
         edges: {
             cursor: string;
             node: AnyObject | null;
