@@ -1019,7 +1019,7 @@
             {
               "kind": "Method",
               "canonicalReference": "subito-graphql!GID.decode:member(1)",
-              "docComment": "/**\n * Decode a global ID\n *\n * @param gid - GID to decode\n *\n * @param options - Options to use, use forceInt = true if your local id must be an int\n *\n * @returns \n *\n * @example\n *\n * We want to build a GID to identify the third product save in cart Each cart are saved into a document containing an array of product\n * ```\n * // Prints \"12\":\n * console.log(GID.decode('xxx'));\n * ```\n *\n */\n",
+              "docComment": "/**\n * Decode a global ID\n *\n * @deprecated\n *\n * Use the new {@link GID.read} method instead.\n *\n * @param gid - GID to decode\n *\n * @param options - Options to use, use forceInt = true if your local id must be an int\n *\n * @returns \n *\n * @example\n *\n * We want to build a GID to identify the third product save in cart Each cart are saved into a document containing an array of product\n * ```\n * // Prints \"12\":\n * console.log(GID.decode('xxx'));\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1163,6 +1163,69 @@
               ],
               "isOptional": false,
               "name": "encode"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!GID.read:member(1)",
+              "docComment": "/**\n * Decode a global ID\n *\n * @param gid - GID to decode\n *\n * @param options - Options to use\n *\n * @returns \n *\n * @example\n *\n * We want to build a GID to identify the third product save in cart Each cart are saved into a document containing an array of product\n * ```\n * // Prints \"12\":\n * console.log(GID.decode('xxx'));\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static read(gid: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", { raw }?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        raw?: boolean;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | number | {\n        id: string | number;\n        version: number;\n        data: {};\n        type: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "gid",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "{ raw }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "read"
             }
           ],
           "implementsTokenRanges": []

@@ -89,6 +89,7 @@ export class GID {
         data: {};
         type: string;
     })[];
+    // @deprecated
     static decode(gid: string, raw?: Boolean): string | number | {
         id: string | number;
         version: number;
@@ -96,6 +97,14 @@ export class GID {
         type: string;
     };
     static encode(type: string, id: string | number, data?: Object | string | number): string;
+    static read(gid: string, { raw }?: {
+        raw?: boolean;
+    }): string | number | {
+        id: string | number;
+        version: number;
+        data: {};
+        type: string;
+    };
 }
 
 // @public (undocumented)
