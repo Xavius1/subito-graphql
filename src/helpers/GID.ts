@@ -56,9 +56,29 @@ class GID {
    *
    * @param gid - GID to decode
    * @param options - Options to use, use forceInt = true if your local id must be an int
+   * @deprecated Use the new {@link GID.read} method instead.
    * @returns
    */
   static decode(gid: string, raw?: Boolean) {
+    return GID.read(gid, { raw: !raw });
+  }
+
+  /**
+   * Decode a global ID
+   *
+   * @example
+   * We want to build a GID to identify the third product save in cart
+   * Each cart are saved into a document containing an array of product
+   * ```
+   * // Prints "12":
+   * console.log(GID.decode('xxx'));
+   * ```
+   *
+   * @param gid - GID to decode
+   * @param options - Options to use
+   * @returns
+   */
+  static read(gid: string, { raw = false }: { raw?: boolean} = {}) {
     checker.isExists(gid);
     const [type, id, version, data] = Buffer
       .from(gid, 'base64')
@@ -80,7 +100,7 @@ class GID {
       parsedData = JSON.parse(crypto.decrypt(tmpData.data));
     }
 
-    if (raw) {
+    if (!raw) {
       return parsedId;
     }
 
