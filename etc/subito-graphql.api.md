@@ -139,11 +139,7 @@ export type PayloadResponse = {
 
 // @public
 export abstract class Policy {
-    constructor({ viewer, gateway, app }: {
-        viewer: any;
-        gateway: any;
-        app: any;
-    });
+    constructor(context: any);
     cant(dontThrow?: boolean): false;
     protected context: unknown;
     create(): boolean;

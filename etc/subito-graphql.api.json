@@ -1421,11 +1421,11 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor({ viewer, gateway, app }: "
+                  "text": "constructor(context: "
                 },
                 {
                   "kind": "Content",
-                  "text": "{\n        viewer: any;\n        gateway: any;\n        app: any;\n    }"
+                  "text": "any"
                 },
                 {
                   "kind": "Content",
@@ -1437,7 +1437,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "{ viewer, gateway, app }",
+                  "parameterName": "context",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
