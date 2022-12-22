@@ -144,6 +144,7 @@ export abstract class Policy {
         gateway: any;
         app: any;
     });
+    cant(dontThrow?: boolean): false;
     protected context: unknown;
     create(): boolean;
     delete(): boolean;
@@ -151,7 +152,8 @@ export abstract class Policy {
     protected hasRole(role: string): boolean;
     protected isAdmin(): boolean;
     protected isAuth(): boolean;
-    protected isProxy(): boolean;
+    protected isGuest(): boolean;
+    protected isProxy(id?: string): boolean;
     protected proxy: AnyObject | null;
     read(doc: AnyObject | null): AnyObject | null;
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];

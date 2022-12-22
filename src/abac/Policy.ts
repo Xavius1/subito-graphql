@@ -80,13 +80,42 @@ abstract class Policy {
   }
 
   /**
+   * To call when policy cant auth the action
+   *
+   * @param dontThrow - Return false instead of throw an error
+   * @returns
+   *
+   * @throws {@link Thrower.forbidden}
+   * Thrown when dontThrow = false or when it's not define
+   *
+   * @public
+   */
+  cant(dontThrow = false): false { // eslint-disable-line class-methods-use-this
+    if (dontThrow) {
+      Thrower.forbidden();
+    }
+    return false;
+  }
+
+  /**
    * Is the call done by a proxy ?
+   *
+   * @param id - To check a specific proxy
    * @returns
    *
    * @public
    */
-  protected isProxy() {
-    return !!(this.proxy);
+  protected isProxy(id?: string) {
+    if (!this.proxy) {
+      return false;
+    }
+
+    const { id: proxyId } = this.proxy;
+    if (id && proxyId !== id) {
+      return false;
+    }
+
+    return true;
   }
 
   /**
@@ -129,6 +158,17 @@ abstract class Policy {
    */
   protected isAuth() {
     return !!(this.viewer);
+  }
+
+  /**
+   * Check if the user is a guest
+   *
+   * @returns
+   *
+   * @public
+   */
+  protected isGuest() {
+    return (!this.isProxy() && !this.isAuth());
   }
 
   /**

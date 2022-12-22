@@ -1447,6 +1447,53 @@
               ]
             },
             {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#cant:member(1)",
+              "docComment": "/**\n * To call when policy cant auth the action\n *\n * @param dontThrow - Return false instead of throw an error\n *\n * @returns \n *\n * @throws\n *\n * {@link Thrower.forbidden} Thrown when dontThrow = false or when it's not define\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "cant(dontThrow?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "false"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "dontThrow",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "cant"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "subito-graphql!Policy#context:member",
               "docComment": "/**\n * The current context\n *\n * @public\n */\n",
@@ -1673,12 +1720,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "subito-graphql!Policy#isProxy:member(1)",
-              "docComment": "/**\n * Is the call done by a proxy ?\n *\n * @returns \n *\n * @public\n */\n",
+              "canonicalReference": "subito-graphql!Policy#isGuest:member(1)",
+              "docComment": "/**\n * Check if the user is a guest\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected isProxy(): "
+                  "text": "protected isGuest(): "
                 },
                 {
                   "kind": "Content",
@@ -1698,6 +1745,53 @@
               "isProtected": true,
               "overloadIndex": 1,
               "parameters": [],
+              "isOptional": false,
+              "name": "isGuest"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#isProxy:member(1)",
+              "docComment": "/**\n * Is the call done by a proxy ?\n *\n * @param id - To check a specific proxy\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected isProxy(id?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": true,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
               "isOptional": false,
               "name": "isProxy"
             },
