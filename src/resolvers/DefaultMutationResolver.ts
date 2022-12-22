@@ -102,9 +102,9 @@ const DefaultMutationResolver = (source: string) => ({
 
     Abac[source].update({ input });
 
-    const { doc } = await dataSources[plural(source)].delete({
-      id: GID.decode(id, true),
-    }, context);
+    const { doc } = await dataSources[plural(source)].deleteById(
+      GID.read(id),
+    );
 
     return payload({
       data: Abac[source].read(doc),
