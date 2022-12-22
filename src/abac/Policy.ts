@@ -73,7 +73,9 @@ abstract class Policy {
   protected context: unknown;
 
   // @ts-ignore TODO handle it
-  constructor({ viewer, gateway, app }) {
+  constructor(context) {
+    this.context = context;
+    const { viewer, gateway, app } = context;
     this.viewer = viewer;
     this.gateway = gateway;
     this.proxy = app;
