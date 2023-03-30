@@ -1796,6 +1796,53 @@
               "name": "isProxy"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#isViewer:member(1)",
+              "docComment": "/**\n * Check if the user is a specific viewer\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected isViewer(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": true,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "isViewer"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "subito-graphql!Policy#proxy:member",
               "docComment": "/**\n * The proxy\n *\n * @public\n */\n",

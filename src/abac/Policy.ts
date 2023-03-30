@@ -174,6 +174,17 @@ abstract class Policy {
   }
 
   /**
+   * Check if the user is a specific viewer
+   *
+   * @returns
+   *
+   * @public
+   */
+  protected isViewer(id: string) {
+    return (this.isAuth() && this.viewer?.id === id);
+  }
+
+  /**
    * Read a doc
    *
    * @param doc - the doc to read

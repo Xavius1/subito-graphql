@@ -150,6 +150,7 @@ export abstract class Policy {
     protected isAuth(): boolean;
     protected isGuest(): boolean;
     protected isProxy(id?: string): boolean;
+    protected isViewer(id: string): boolean;
     protected proxy: AnyObject | null;
     read(doc: AnyObject | null): AnyObject | null;
     readMany(docs: AnyObject[], keepNull?: true): (AnyObject | null)[];
