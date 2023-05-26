@@ -1,7 +1,7 @@
 import { Thrower } from 'subito-lib';
 import { AnyObject } from '..';
 import e from '../security/env.js';
-import httpCode from '../helpers/httpCode.js';
+import httpCode, { HttpCode } from '../helpers/httpCode.js';
 import payloader from '../payloads/payloader.js';
 
 /** @public */
@@ -129,6 +129,17 @@ abstract class Policy {
    */
   badRequest() { // eslint-disable-line class-methods-use-this
     return payloader({ code: httpCode.BAD_REQUEST });
+  }
+
+  /**
+   * Send a payload with an empty node
+   * @param code - An HTTP code
+   * @returns
+   *
+   * @public
+   */
+  stop(code: HttpCode) { // eslint-disable-line class-methods-use-this
+    return payloader({ code });
   }
 
   /**

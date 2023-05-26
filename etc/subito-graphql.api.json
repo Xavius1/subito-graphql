@@ -2324,6 +2324,59 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#stop:member(1)",
+              "docComment": "/**\n * Send a payload with an empty node\n *\n * @param code - An HTTP code\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "stop(code: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "HttpCode",
+                  "canonicalReference": "subito-graphql!HttpCode:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "import(\"..\")."
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PayloaderResponse",
+                  "canonicalReference": "subito-graphql!PayloaderResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "code",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "stop"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "subito-graphql!Policy#unauthorized:member(1)",
               "docComment": "/**\n * Send an unauthorized payload\n *\n * @returns \n *\n * @public\n */\n",
               "excerptTokens": [

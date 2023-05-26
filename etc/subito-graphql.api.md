@@ -226,6 +226,7 @@ export abstract class Policy {
             endCursor: string;
         } | null;
     };
+    stop(code: HttpCode): PayloaderResponse;
     unauthorized(): PayloaderResponse;
     update(): boolean;
     protected viewer: AnyObject | null;
