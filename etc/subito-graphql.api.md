@@ -108,18 +108,71 @@ export class GID {
 }
 
 // @public (undocumented)
+export type HttpCode = typeof httpCode[keyof typeof httpCode];
+
+// @public
+export const httpCode: {
+    readonly OK: 200;
+    readonly CREATED: 201;
+    readonly ACCEPTED: 202;
+    readonly NO_CONTENT: 204;
+    readonly NEED_ACTION: 290;
+    readonly BAD_REQUEST: 400;
+    readonly UNAUTHORIZED: 401;
+    readonly FORBIDDEN: 403;
+    readonly NOT_FOUND: 404;
+    readonly CONFLICT: 409;
+    readonly GONE: 410;
+    readonly INTERNAL_SERVER_ERROR: 500;
+    readonly NOT_IMPLEMENTED: 501;
+};
+
+// @public (undocumented)
 export type Message = {
     [key: number]: string;
 };
 
 // @public
-export const message: Message;
+export const message: {
+    200: string;
+    201: string;
+    202: string;
+    204: string;
+    290: string;
+    400: string;
+    401: string;
+    403: string;
+    404: string;
+    409: string;
+    410: string;
+    500: string;
+    501: string;
+};
 
 // @public @deprecated
 export const mutationPayload: (doc?: DocumentNode) => TPayload;
 
-// @public
+// @public @deprecated
 export const payload: ({ message, data, code, keyData, }: PayloadInput) => PayloadResponse;
+
+// @public
+export const payloader: ({ message, data, code, keyData, }: PayloaderInput) => PayloaderResponse;
+
+// @public (undocumented)
+export type PayloaderInput = {
+    message?: string;
+    data?: any;
+    code?: HttpCode;
+    keyData?: string;
+};
+
+// @public (undocumented)
+export type PayloaderResponse = {
+    message: string;
+    success: boolean;
+    code: HttpCode;
+    [keyData: string]: any;
+};
 
 // @public (undocumented)
 export type PayloadInput = {
@@ -140,10 +193,12 @@ export type PayloadResponse = {
 // @public
 export abstract class Policy {
     constructor(context: any);
+    badRequest(): PayloaderResponse;
     cant(dontThrow?: boolean): false;
     protected context: unknown;
     create(): boolean;
     delete(): boolean;
+    forbidden(): PayloaderResponse;
     protected gateway: null;
     protected hasRole(role: string): boolean;
     protected isAdmin(): boolean;
@@ -171,6 +226,7 @@ export abstract class Policy {
             endCursor: string;
         } | null;
     };
+    unauthorized(): PayloaderResponse;
     update(): boolean;
     protected viewer: AnyObject | null;
 }

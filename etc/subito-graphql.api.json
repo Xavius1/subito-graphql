@@ -1232,6 +1232,71 @@
         },
         {
           "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!HttpCode:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type HttpCode = "
+            },
+            {
+              "kind": "Content",
+              "text": "typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "httpCode",
+              "canonicalReference": "subito-graphql!~httpCode:var"
+            },
+            {
+              "kind": "Content",
+              "text": "[keyof typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "httpCode",
+              "canonicalReference": "subito-graphql!~httpCode:var"
+            },
+            {
+              "kind": "Content",
+              "text": "]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "HttpCode",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!httpCode:var",
+          "docComment": "/**\n * List of http code\n *\n * @remarks\n *\n * Use UNAUTHORIZED when the action need an authentification and the viewer is a guest Use FORBIDDEN when the user is auth but he has no rights\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "httpCode: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    readonly OK: 200;\n    readonly CREATED: 201;\n    readonly ACCEPTED: 202;\n    readonly NO_CONTENT: 204;\n    readonly NEED_ACTION: 290;\n    readonly BAD_REQUEST: 400;\n    readonly UNAUTHORIZED: 401;\n    readonly FORBIDDEN: 403;\n    readonly NOT_FOUND: 404;\n    readonly CONFLICT: 409;\n    readonly GONE: 410;\n    readonly INTERNAL_SERVER_ERROR: 500;\n    readonly NOT_IMPLEMENTED: 501;\n}"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "httpCode",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
           "canonicalReference": "subito-graphql!Message:type",
           "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
@@ -1265,9 +1330,8 @@
               "text": "message: "
             },
             {
-              "kind": "Reference",
-              "text": "Message",
-              "canonicalReference": "subito-graphql!Message:type"
+              "kind": "Content",
+              "text": "{\n    200: string;\n    201: string;\n    202: string;\n    204: string;\n    290: string;\n    400: string;\n    401: string;\n    403: string;\n    404: string;\n    409: string;\n    410: string;\n    500: string;\n    501: string;\n}"
             }
           ],
           "isReadonly": true,
@@ -1317,7 +1381,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "subito-graphql!payload:var",
-          "docComment": "/**\n * Send a success payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
+          "docComment": "/**\n * Send a success payload\n *\n * @deprecated\n *\n * Use the new {@link payloader} function instead.\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1348,6 +1412,110 @@
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 5
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "subito-graphql!payloader:var",
+          "docComment": "/**\n * Send a success payload\n *\n * @param input - The payload input\n *\n * @returns \n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "payloader: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ message, data, code, keyData, }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PayloaderInput",
+              "canonicalReference": "subito-graphql!PayloaderInput:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "PayloaderResponse",
+              "canonicalReference": "subito-graphql!PayloaderResponse:type"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "payloader",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!PayloaderInput:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PayloaderInput = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    message?: string;\n    data?: any;\n    code?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "HttpCode",
+              "canonicalReference": "subito-graphql!HttpCode:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    keyData?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PayloaderInput",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "subito-graphql!PayloaderResponse:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PayloaderResponse = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    message: string;\n    success: boolean;\n    code: "
+            },
+            {
+              "kind": "Reference",
+              "text": "HttpCode",
+              "canonicalReference": "subito-graphql!HttpCode:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    [keyData: string]: any;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PayloaderResponse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
           }
         },
         {
@@ -1445,6 +1613,41 @@
                   "isOptional": false
                 }
               ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#badRequest:member(1)",
+              "docComment": "/**\n * Send a bad request payload\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "badRequest(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "import(\"..\")."
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PayloaderResponse",
+                  "canonicalReference": "subito-graphql!PayloaderResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "badRequest"
             },
             {
               "kind": "Method",
@@ -1581,6 +1784,41 @@
               "parameters": [],
               "isOptional": false,
               "name": "delete"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#forbidden:member(1)",
+              "docComment": "/**\n * Send a forbidden payload\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "forbidden(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "import(\"..\")."
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PayloaderResponse",
+                  "canonicalReference": "subito-graphql!PayloaderResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "forbidden"
             },
             {
               "kind": "Property",
@@ -2083,6 +2321,41 @@
               ],
               "isOptional": false,
               "name": "readManyByCursor"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "subito-graphql!Policy#unauthorized:member(1)",
+              "docComment": "/**\n * Send an unauthorized payload\n *\n * @returns \n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unauthorized(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "import(\"..\")."
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PayloaderResponse",
+                  "canonicalReference": "subito-graphql!PayloaderResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "unauthorized"
             },
             {
               "kind": "Method",
