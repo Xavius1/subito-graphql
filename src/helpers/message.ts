@@ -2,14 +2,14 @@
 export type Code = (200 | 201 | 202 | 204 | 290 | 400 | 401 | 403 | 404 | 409 | 410 | 500 | 501);
 
 /** @public */
-export type Message = { [ key: number]: string };
+export type Message = { [key: number]: string };
 
 /**
  * List of http message
  *
  * @public
  */
-const message: Message = {
+const message = {
   200: 'OK',
   201: 'Created',
   202: 'Accepted',

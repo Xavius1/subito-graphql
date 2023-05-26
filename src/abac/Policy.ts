@@ -1,6 +1,8 @@
 import { Thrower } from 'subito-lib';
 import { AnyObject } from '..';
 import e from '../security/env.js';
+import httpCode from '../helpers/httpCode.js';
+import payloader from '../payloads/payloader.js';
 
 /** @public */
 export type ReadManyByCursorInput = {
@@ -97,6 +99,36 @@ abstract class Policy {
       Thrower.forbidden();
     }
     return false;
+  }
+
+  /**
+   * Send a forbidden payload
+   * @returns
+   *
+   * @public
+   */
+  forbidden() { // eslint-disable-line class-methods-use-this
+    return payloader({ code: httpCode.FORBIDDEN });
+  }
+
+  /**
+   * Send an unauthorized payload
+   * @returns
+   *
+   * @public
+   */
+  unauthorized() { // eslint-disable-line class-methods-use-this
+    return payloader({ code: httpCode.UNAUTHORIZED });
+  }
+
+  /**
+   * Send a bad request payload
+   * @returns
+   *
+   * @public
+   */
+  badRequest() { // eslint-disable-line class-methods-use-this
+    return payloader({ code: httpCode.BAD_REQUEST });
   }
 
   /**

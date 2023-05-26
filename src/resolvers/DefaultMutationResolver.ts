@@ -100,7 +100,7 @@ const DefaultMutationResolver = (source: string) => ({
     const { dataSources } = context;
     const { Abac } = dataSources;
 
-    Abac[source].update({ input });
+    Abac[source].delete({ input });
 
     const { doc } = await dataSources[plural(source)].deleteById(
       GID.read(id),

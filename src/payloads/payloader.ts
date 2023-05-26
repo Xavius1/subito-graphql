@@ -1,48 +1,51 @@
 import messageFromCode from '../helpers/message.js';
+import httpCode, { HttpCode } from '../helpers/httpCode.js';
+
+// #region types
 
 /** @public */
-export type PayloadInput = {
+export type PayloaderInput = {
   message?: string,
   data?: any,
-  code?: number,
+  code?: HttpCode,
   keyData?: string,
 }
 
 /** @public */
-export type PayloadResponse = {
+export type PayloaderResponse = {
   message: string,
   success: boolean,
-  code: number,
+  code: HttpCode,
   [keyData: string]: any,
 }
+
+// #endregion
 
 /**
  * Send a success payload
  * @param input - The payload input
  * @returns
  *
- * @deprecated Use the new {@link payloader} function instead.
- *
  * @public
  */
-const payload = function payloadResponse({
+const payloader = function payloadResponse({
   message,
   data,
   code,
   keyData = 'node',
-}: PayloadInput): PayloadResponse {
-  let finalCode = code || 200;
+}: PayloaderInput): PayloaderResponse {
+  let finalCode = code || httpCode.OK;
   if (!code && !data) {
-    finalCode = 500;
+    finalCode = httpCode.INTERNAL_SERVER_ERROR;
   }
 
   return {
     code: finalCode,
+    // If the http code is lower than 300 then it's a success
     success: (finalCode < 300),
-    // @ts-ignore
     message: (message || messageFromCode[finalCode]),
     [keyData]: data,
   };
 };
 
-export default payload;
+export default payloader;
